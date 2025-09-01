@@ -1,0 +1,40 @@
+# Python files
+*.py
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Internal documentation
+FILE_ORGANIZATION_STRATEGY.md
+REORGANIZATION_COMPLETE.md
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# Log files
+*.log
+
+# Jupyter notebooks
+*.ipynb
+
+# Environment files
+.env
+.venv
+env/
+venv/
+
+# Development
+.qodo/
