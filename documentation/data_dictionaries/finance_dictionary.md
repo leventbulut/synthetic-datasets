@@ -18,12 +18,12 @@ This dataset contains 750,000 synthetic customer records for financial services 
 ### Financial Metrics
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
-| annual_income | float64 | Annual income amount | USD | 0.00% |
+| annual_income | float64 | Annual income amount | USD | 0.01% |
 | credit_limit | float64 | Total credit limit across all accounts | USD | 0.00% |
 | total_debt | float64 | Total outstanding debt | USD | 0.00% |
-| debt_to_income_ratio | float64 | Ratio of debt to annual income | ratio | 0.00% |
-| credit_utilization | float64 | Percentage of credit limit used | percentage | 0.00% |
-| payment_history_score | float64 | Score based on payment timeliness | score | 0.00% |
+| debt_to_income_ratio | float64 | Ratio of debt to annual income | ratio | 0.98% |
+| credit_utilization | float64 | Percentage of credit limit used | percentage | 0.98% |
+| payment_history_score | float64 | Score based on payment timeliness | score | 1.00% |
 
 ### Account Behavior
 | Column Name | Data Type | Description | Unit | % Missing |
@@ -31,7 +31,7 @@ This dataset contains 750,000 synthetic customer records for financial services 
 | account_age_months | int64 | Age of oldest account in months | months | 0.00% |
 | num_credit_cards | int64 | Number of active credit cards | count | 0.00% |
 | num_loans | int64 | Number of active loans | count | 0.00% |
-| avg_monthly_payment | float64 | Average monthly payment amount | USD | 0.00% |
+| avg_monthly_payment | float64 | Average monthly payment amount | USD | 0.02% |
 | late_payments_90d | int64 | Number of payments 90+ days late | count | 0.00% |
 | recent_inquiries | int64 | Credit inquiries in last 6 months | count | 0.00% |
 

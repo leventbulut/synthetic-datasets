@@ -21,9 +21,9 @@ This dataset contains 450,000 synthetic delivery records for transportation anal
 | origin_location | category | Origin location identifier | - | 0.00% |
 | destination_location | category | Destination location identifier | - | 0.00% |
 | route_distance | float64 | Route distance in miles | miles | 0.00% |
-| estimated_travel_time | float64 | Estimated travel time in minutes | minutes | 0.00% |
-| actual_travel_time | float64 | Actual travel time in minutes | minutes | 0.00% |
-| route_type | category | Type of route (Highway, Local, Mixed) | - | 0.00% |
+| estimated_travel_time | float64 | Estimated travel time in minutes | minutes | 0.02% |
+| actual_travel_time | float64 | Actual travel time in minutes | minutes | 0.02% |
+| route_type | category | Type of route (Highway, Local, Mixed) | - | 0.85% |
 
 ### Vehicle and Driver
 | Column Name | Data Type | Description | Unit | % Missing |
@@ -39,7 +39,7 @@ This dataset contains 450,000 synthetic delivery records for transportation anal
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
 | package_weight | float64 | Package weight in pounds | lbs | 0.00% |
-| package_volume | float64 | Package volume in cubic feet | cubic feet | 0.00% |
+| package_volume | float64 | Package volume in cubic feet | cubic feet | 100.00% |
 | package_fragility | category | Package fragility level | - | 0.00% |
 | special_handling | category | Special handling requirements | - | 0.00% |
 | insurance_value | float64 | Package insurance value | USD | 0.00% |
@@ -60,8 +60,8 @@ This dataset contains 450,000 synthetic delivery records for transportation anal
 |-------------|-----------|-------------|------|------------|
 | on_time_delivery | category | Whether delivery was on time | - | 0.00% |
 | delivery_success | category | Delivery success status | - | 0.00% |
-| customer_satisfaction | float64 | Customer satisfaction rating | score | 0.00% |
-| delivery_accuracy | float64 | Delivery accuracy score | score | 0.00% |
+| customer_satisfaction | float64 | Customer satisfaction rating | score | 0.02% |
+| delivery_accuracy | float64 | Delivery accuracy score | score | 0.89% |
 | handling_quality | float64 | Package handling quality rating | score | 0.00% |
 | communication_quality | float64 | Communication quality rating | score | 0.00% |
 

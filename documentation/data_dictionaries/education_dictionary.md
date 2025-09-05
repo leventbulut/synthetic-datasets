@@ -12,8 +12,8 @@ This dataset contains 300,000 synthetic student records for educational analysis
 | student_age | int64 | Student age in years | years | 0.00% |
 | student_gender | category | Student gender (Male, Female, Other) | - | 0.00% |
 | ethnicity | category | Student ethnicity | - | 0.00% |
-| family_income | category | Family income level (Low, Medium, High, Very High) | - | 0.00% |
-| parent_education | category | Highest parent education level | - | 0.00% |
+| family_income | category | Family income level (Low, Medium, High, Very High) | - | 0.09% |
+| parent_education | category | Highest parent education level | - | 0.09% |
 
 ### Academic Information
 | Column Name | Data Type | Description | Unit | % Missing |
@@ -38,8 +38,8 @@ This dataset contains 300,000 synthetic student records for educational analysis
 ### Learning Behaviors
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
-| study_hours_per_week | float64 | Hours spent studying per week | hours | 0.00% |
-| homework_completion_rate | float64 | Percentage of homework completed | percentage | 0.00% |
+| study_hours_per_week | float64 | Hours spent studying per week | hours | 0.79% |
+| homework_completion_rate | float64 | Percentage of homework completed | percentage | 0.91% |
 | class_attendance_rate | float64 | Percentage of classes attended | percentage | 0.00% |
 | participation_score | float64 | Class participation rating | score | 0.00% |
 | time_management_score | float64 | Time management skills rating | score | 0.00% |
@@ -49,7 +49,7 @@ This dataset contains 300,000 synthetic student records for educational analysis
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
 | sports_participation | category | Sports participation level | - | 0.00% |
-| club_membership | int64 | Number of clubs/organizations joined | count | 0.00% |
+| club_membership | int64 | Number of clubs/organizations joined | count | 0.82% |
 | leadership_roles | int64 | Number of leadership positions held | count | 0.00% |
 | community_service_hours | float64 | Community service hours completed | hours | 0.00% |
 | artistic_activities | category | Participation in artistic activities | - | 0.00% |
@@ -78,7 +78,7 @@ This dataset contains 300,000 synthetic student records for educational analysis
 ### Technology Access
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
-| computer_access | category | Access to computer at home | - | 0.00% |
+| computer_access | category | Access to computer at home | - | 0.09% |
 | internet_access | category | Access to internet at home | - | 0.00% |
 | digital_literacy_score | float64 | Digital literacy skills rating | score | 0.00% |
 | online_learning_experience | category | Experience with online learning | - | 0.00% |

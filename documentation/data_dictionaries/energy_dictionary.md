@@ -19,19 +19,19 @@ This dataset contains 350,000 synthetic energy consumption records for energy & 
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
 | hvac_system_type | category | Type of HVAC system | - | 0.00% |
-| hvac_efficiency_rating | float64 | HVAC system efficiency rating | SEER | 0.00% |
+| hvac_efficiency_rating | float64 | HVAC system efficiency rating | SEER | 0.10% |
 | lighting_system | category | Type of lighting system | - | 0.00% |
 | lighting_efficiency | float64 | Lighting efficiency rating | lumens/watt | 0.00% |
-| insulation_rating | category | Building insulation rating | - | 0.00% |
-| window_efficiency | category | Window energy efficiency rating | - | 0.00% |
+| insulation_rating | category | Building insulation rating | - | 0.12% |
+| window_efficiency | category | Window energy efficiency rating | - | 0.11% |
 
 ### Environmental Conditions
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
 | outdoor_temperature | float64 | Outdoor temperature | Fahrenheit | 0.00% |
-| humidity_level | float64 | Outdoor humidity level | percentage | 0.00% |
-| solar_radiation | float64 | Solar radiation intensity | W/m² | 0.00% |
-| wind_speed | float64 | Wind speed | mph | 0.00% |
+| humidity_level | float64 | Outdoor humidity level | percentage | 0.89% |
+| solar_radiation | float64 | Solar radiation intensity | W/m² | 0.90% |
+| wind_speed | float64 | Wind speed | mph | 0.88% |
 | precipitation | float64 | Precipitation amount | inches | 0.00% |
 | cloud_cover | category | Cloud cover conditions | - | 0.00% |
 

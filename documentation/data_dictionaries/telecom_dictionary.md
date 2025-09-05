@@ -18,7 +18,7 @@ This dataset contains 550,000 synthetic customer records for telecommunications 
 ### Service Information
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
-| service_type | category | Type of service (Mobile, Internet, TV, Bundle) | - | 0.00% |
+| service_type | category | Type of service (Mobile, Internet, TV, Bundle) | - | 9.98% |
 | plan_type | category | Service plan category (Basic, Standard, Premium, Unlimited) | - | 0.00% |
 | contract_length | int64 | Contract duration in months | months | 0.00% |
 | monthly_charge | float64 | Monthly service charge | USD | 0.00% |
@@ -28,9 +28,9 @@ This dataset contains 550,000 synthetic customer records for telecommunications 
 ### Usage Metrics
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
-| voice_minutes | float64 | Monthly voice call minutes | minutes | 0.00% |
-| data_usage_gb | float64 | Monthly data usage in GB | GB | 0.00% |
-| text_messages | int64 | Monthly text messages sent | count | 0.00% |
+| voice_minutes | float64 | Monthly voice call minutes | minutes | 0.93% |
+| data_usage_gb | float64 | Monthly data usage in GB | GB | 0.07% |
+| text_messages | int64 | Monthly text messages sent | count | 0.94% |
 | video_streaming_hours | float64 | Monthly video streaming hours | hours | 0.00% |
 | international_calls | int64 | Monthly international calls | count | 0.00% |
 | roaming_usage | float64 | Monthly roaming data usage | GB | 0.00% |
@@ -38,8 +38,8 @@ This dataset contains 550,000 synthetic customer records for telecommunications 
 ### Customer Behavior
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
-| customer_service_calls | int64 | Number of customer service calls | count | 0.00% |
-| technical_support_calls | int64 | Number of technical support calls | count | 0.00% |
+| customer_service_calls | int64 | Number of customer service calls | count | 0.84% |
+| technical_support_calls | int64 | Number of technical support calls | count | 0.06% |
 | billing_queries | int64 | Number of billing-related queries | count | 0.00% |
 | complaint_count | int64 | Number of complaints filed | count | 0.00% |
 | upgrade_requests | int64 | Number of service upgrade requests | count | 0.00% |

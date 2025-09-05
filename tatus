@@ -1,0 +1,9 @@
+[33m4db3402[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Add marketing dataset (140MB) using Git LFS
+[33m8f9f6e3[m Add telecommunications dataset (134MB) using Git LFS
+[33mab14756[m Add transportation dataset (115MB) using Git LFS
+[33mc1a3c6d[m Add healthcare dataset (109MB) using Git LFS
+[33meb14add[m Add manufacturing dataset (104MB) using Git LFS
+[33m9b21fab[m Add energy dataset (91MB) using Git LFS - synthetic energy data for 2025
+[33m42f022d[m Configure Git LFS for CSV files
+[33m9fb5df8[m Add education dataset (78MB) - synthetic education data for 2025
+[33m9912cf3[m Initial commit: Repository structure and documentation

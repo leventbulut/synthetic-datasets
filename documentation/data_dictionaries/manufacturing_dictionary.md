@@ -18,10 +18,10 @@ This dataset contains 400,000 synthetic production batch records for manufacturi
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
 | temperature | float64 | Production temperature | Celsius | 0.00% |
-| pressure | float64 | Production pressure | PSI | 0.00% |
-| humidity | float64 | Production humidity | percentage | 0.00% |
+| pressure | float64 | Production pressure | PSI | 0.98% |
+| humidity | float64 | Production humidity | percentage | 0.98% |
 | speed | float64 | Production line speed | units/hour | 0.00% |
-| material_quality | category | Raw material quality grade | - | 0.00% |
+| material_quality | category | Raw material quality grade | - | 0.02% |
 | operator_id | int64 | Production operator identifier | - | 0.00% |
 
 ### Quality Metrics
@@ -29,7 +29,7 @@ This dataset contains 400,000 synthetic production batch records for manufacturi
 |-------------|-----------|-------------|------|------------|
 | defect_count | int64 | Number of defective units | count | 0.00% |
 | defect_rate | float64 | Percentage of defective units | percentage | 0.00% |
-| quality_score | float64 | Overall quality rating | score | 0.00% |
+| quality_score | float64 | Overall quality rating | score | 0.02% |
 | inspection_result | category | Quality inspection outcome | - | 0.00% |
 | rework_required | category | Whether rework is needed | - | 0.00% |
 
@@ -38,9 +38,9 @@ This dataset contains 400,000 synthetic production batch records for manufacturi
 |-------------|-----------|-------------|------|------------|
 | cycle_time | float64 | Time per unit production | minutes | 0.00% |
 | downtime_minutes | float64 | Production downtime duration | minutes | 0.00% |
-| efficiency_score | float64 | Production efficiency rating | score | 0.00% |
+| efficiency_score | float64 | Production efficiency rating | score | 0.02% |
 | throughput | float64 | Units produced per hour | units/hour | 0.00% |
-| yield_rate | float64 | Percentage of good units | percentage | 0.00% |
+| yield_rate | float64 | Percentage of good units | percentage | 0.96% |
 
 ### Cost Information
 | Column Name | Data Type | Description | Unit | % Missing |

@@ -32,17 +32,17 @@
 ### Vital Signs
 | Column Name | Type | Description | Unit | % Missing |
 |-------------|------|-------------|------|-----------|
-| `systolic_bp` | Float | Systolic blood pressure | mmHg | 1.20% |
-| `diastolic_bp` | Float | Diastolic blood pressure | mmHg | 1.20% |
-| `heart_rate` | Float | Heart rate | Beats per minute | 1.20% |
-| `temperature` | Float | Body temperature | Fahrenheit | 0.60% |
+| `systolic_bp` | Float | Systolic blood pressure | mmHg | 0.78% |
+| `diastolic_bp` | Float | Diastolic blood pressure | mmHg | 0.77% |
+| `heart_rate` | Float | Heart rate | Beats per minute | 0.79% |
+| `temperature` | Float | Body temperature | Fahrenheit | 0.00% |
 
 ### Laboratory Values
 | Column Name | Type | Description | Unit | % Missing |
 |-------------|------|-------------|------|-----------|
-| `hemoglobin` | Float | Hemoglobin level | g/dL | 0.80% |
-| `creatinine` | Float | Serum creatinine level | mg/dL | 0.80% |
-| `glucose` | Float | Blood glucose level | mg/dL | 0.80% |
+| `hemoglobin` | Float | Hemoglobin level | g/dL | 0.22% |
+| `creatinine` | Float | Serum creatinine level | mg/dL | 0.21% |
+| `glucose` | Float | Blood glucose level | mg/dL | 0.20% |
 
 ### Administrative & Clinical Counts
 | Column Name | Type | Description | Unit | % Missing |

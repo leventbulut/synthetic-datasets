@@ -23,7 +23,7 @@ This dataset contains 800,000 synthetic sales transaction records for retail ana
 | customer_location | category | Geographic location (Urban, Suburban, Rural) | - | 0.00% |
 | income_level | category | Income category (Low, Medium, High, Very High) | - | 0.00% |
 | customer_segment | category | Customer segment (Budget, Regular, Premium, Luxury) | - | 0.00% |
-| loyalty_program_tier | category | Loyalty program membership level | - | 0.00% |
+| loyalty_program_tier | category | Loyalty program membership level | - | 0.91% |
 
 ### Product Information
 | Column Name | Data Type | Description | Unit | % Missing |
@@ -51,14 +51,14 @@ This dataset contains 800,000 synthetic sales transaction records for retail ana
 | purchase_frequency | int64 | Customer purchase frequency | purchases/month | 0.00% |
 | avg_order_value | float64 | Average order value | USD | 0.00% |
 | last_purchase_days | int64 | Days since last purchase | days | 0.00% |
-| total_purchases | int64 | Total number of purchases | count | 0.00% |
+| total_purchases | int64 | Total number of purchases | count | 0.74% |
 | return_history | int64 | Number of items returned | count | 0.00% |
 | customer_satisfaction | float64 | Customer satisfaction score | score | 0.00% |
 
 ### Store and Channel
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
-| store_location | category | Store geographic location | - | 0.00% |
+| store_location | category | Store geographic location | - | 0.15% |
 | store_size | category | Store size category | - | 0.00% |
 | store_rating | float64 | Store customer rating | score | 0.00% |
 | channel_performance | float64 | Channel performance score | score | 0.00% |

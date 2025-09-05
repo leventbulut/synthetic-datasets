@@ -12,7 +12,7 @@ This dataset contains 600,000 synthetic customer records for digital marketing a
 | age | int64 | Customer age in years | years | 0.00% |
 | gender | category | Customer gender (Male, Female, Other) | - | 0.00% |
 | location | category | Geographic location (Urban, Suburban, Rural) | - | 0.00% |
-| income_level | category | Income category (Low, Medium, High, Very High) | - | 0.00% |
+| income_level | category | Income category (Low, Medium, High, Very High) | - | 0.21% |
 | education_level | category | Education attainment (High School, Bachelor, Master, PhD) | - | 0.00% |
 
 ### Engagement Metrics
@@ -22,14 +22,14 @@ This dataset contains 600,000 synthetic customer records for digital marketing a
 | app_usage_hours | float64 | Mobile app usage time in hours | hours | 0.00% |
 | email_opens | int64 | Number of emails opened in last 30 days | count | 0.00% |
 | email_clicks | int64 | Number of email clicks in last 30 days | count | 0.00% |
-| social_media_engagement | float64 | Social media interaction score | score | 0.00% |
-| newsletter_subscription | category | Newsletter subscription status | - | 0.00% |
+| social_media_engagement | float64 | Social media interaction score | score | 0.78% |
+| newsletter_subscription | category | Newsletter subscription status | - | 0.80% |
 
 ### Behavioral Patterns
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
-| purchase_frequency | int64 | Number of purchases in last 6 months | count | 0.00% |
-| avg_order_value | float64 | Average order value across purchases | USD | 0.00% |
+| purchase_frequency | int64 | Number of purchases in last 6 months | count | 0.70% |
+| avg_order_value | float64 | Average order value across purchases | USD | 0.18% |
 | last_purchase_days | int64 | Days since last purchase | days | 0.00% |
 | preferred_category | category | Most purchased product category | - | 0.00% |
 | customer_support_contacts | int64 | Number of support contacts in last 6 months | count | 0.00% |

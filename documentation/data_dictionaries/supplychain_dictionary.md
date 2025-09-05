@@ -20,7 +20,7 @@ This dataset contains 1,000,000 synthetic transaction records for supply chain a
 |-------------|-----------|-------------|------|------------|
 | supplier_name | category | Supplier company name | - | 0.00% |
 | supplier_location | category | Geographic location of supplier | - | 0.00% |
-| supplier_rating | float64 | Supplier performance rating | score | 0.00% |
+| supplier_rating | float64 | Supplier performance rating | score | 0.64% |
 | supplier_category | category | Supplier type (Manufacturer, Distributor, etc.) | - | 0.00% |
 | years_in_business | int64 | Number of years supplier has been in business | years | 0.00% |
 | certification_status | category | Quality certification status | - | 0.00% |
@@ -38,7 +38,7 @@ This dataset contains 1,000,000 synthetic transaction records for supply chain a
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
 | defect_rate | float64 | Percentage of defective items | percentage | 0.00% |
-| quality_inspection_score | float64 | Quality inspection rating | score | 0.00% |
+| quality_inspection_score | float64 | Quality inspection rating | score | 0.36% |
 | return_rate | float64 | Percentage of items returned | percentage | 0.00% |
 | customer_satisfaction_score | float64 | Customer satisfaction rating | score | 0.00% |
 
@@ -48,15 +48,15 @@ This dataset contains 1,000,000 synthetic transaction records for supply chain a
 | total_cost | float64 | Total transaction cost | USD | 0.00% |
 | shipping_cost | float64 | Shipping and handling cost | USD | 0.00% |
 | handling_cost | float64 | Material handling cost | USD | 0.00% |
-| on_time_delivery | category | Whether delivery was on time | - | 0.00% |
-| delivery_performance_score | float64 | Delivery performance rating | score | 0.00% |
+| on_time_delivery | category | Whether delivery was on time | - | 0.63% |
+| delivery_performance_score | float64 | Delivery performance rating | score | 0.57% |
 
 ### Risk and Compliance
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
 | compliance_score | float64 | Regulatory compliance rating | score | 0.00% |
-| risk_assessment_score | float64 | Overall risk assessment | score | 0.00% |
-| insurance_coverage | category | Insurance coverage level | - | 0.00% |
+| risk_assessment_score | float64 | Overall risk assessment | score | 0.36% |
+| insurance_coverage | category | Insurance coverage level | - | 0.35% |
 | contract_terms | category | Contract terms and conditions | - | 0.00% |
 
 ### Target Variables
