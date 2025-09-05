@@ -8,62 +8,62 @@ This dataset contains 1,000,000 synthetic transaction records for supply chain a
 ### Transaction Information
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
-| transaction_id | int64 | Unique transaction identifier | - | 0% |
-| supplier_id | int64 | Unique supplier identifier | - | 0% |
-| product_id | int64 | Unique product identifier | - | 0% |
-| order_date | datetime64[ns] | Date when order was placed | date | 0% |
-| delivery_date | datetime64[ns] | Actual delivery date | date | 0% |
-| order_quantity | int64 | Quantity ordered | units | 0% |
+| transaction_id | int64 | Unique transaction identifier | - | 0.00% |
+| supplier_id | int64 | Unique supplier identifier | - | 0.00% |
+| product_id | int64 | Unique product identifier | - | 0.00% |
+| order_date | datetime64[ns] | Date when order was placed | date | 0.00% |
+| delivery_date | datetime64[ns] | Actual delivery date | date | 0.00% |
+| order_quantity | int64 | Quantity ordered | units | 0.00% |
 
 ### Supplier Information
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
-| supplier_name | category | Supplier company name | - | 0% |
-| supplier_location | category | Geographic location of supplier | - | 0% |
-| supplier_rating | float64 | Supplier performance rating | score | 0% |
-| supplier_category | category | Supplier type (Manufacturer, Distributor, etc.) | - | 0% |
-| years_in_business | int64 | Number of years supplier has been in business | years | 0% |
-| certification_status | category | Quality certification status | - | 0% |
+| supplier_name | category | Supplier company name | - | 0.00% |
+| supplier_location | category | Geographic location of supplier | - | 0.00% |
+| supplier_rating | float64 | Supplier performance rating | score | 0.00% |
+| supplier_category | category | Supplier type (Manufacturer, Distributor, etc.) | - | 0.00% |
+| years_in_business | int64 | Number of years supplier has been in business | years | 0.00% |
+| certification_status | category | Quality certification status | - | 0.00% |
 
 ### Product Information
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
-| product_name | category | Product description | - | 0% |
-| product_category | category | Product classification | - | 0% |
-| unit_price | float64 | Price per unit | USD | 0% |
-| product_quality_grade | category | Product quality classification | - | 0% |
-| lead_time_days | int64 | Standard lead time for product | days | 0% |
+| product_name | category | Product description | - | 0.00% |
+| product_category | category | Product classification | - | 0.00% |
+| unit_price | float64 | Price per unit | USD | 0.00% |
+| product_quality_grade | category | Product quality classification | - | 0.00% |
+| lead_time_days | int64 | Standard lead time for product | days | 0.00% |
 
 ### Quality Metrics
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
-| defect_rate | float64 | Percentage of defective items | percentage | 0% |
-| quality_inspection_score | float64 | Quality inspection rating | score | 0% |
-| return_rate | float64 | Percentage of items returned | percentage | 0% |
-| customer_satisfaction_score | float64 | Customer satisfaction rating | score | 0% |
+| defect_rate | float64 | Percentage of defective items | percentage | 0.00% |
+| quality_inspection_score | float64 | Quality inspection rating | score | 0.00% |
+| return_rate | float64 | Percentage of items returned | percentage | 0.00% |
+| customer_satisfaction_score | float64 | Customer satisfaction rating | score | 0.00% |
 
 ### Cost and Performance
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
-| total_cost | float64 | Total transaction cost | USD | 0% |
-| shipping_cost | float64 | Shipping and handling cost | USD | 0% |
-| handling_cost | float64 | Material handling cost | USD | 0% |
-| on_time_delivery | category | Whether delivery was on time | - | 0% |
-| delivery_performance_score | float64 | Delivery performance rating | score | 0% |
+| total_cost | float64 | Total transaction cost | USD | 0.00% |
+| shipping_cost | float64 | Shipping and handling cost | USD | 0.00% |
+| handling_cost | float64 | Material handling cost | USD | 0.00% |
+| on_time_delivery | category | Whether delivery was on time | - | 0.00% |
+| delivery_performance_score | float64 | Delivery performance rating | score | 0.00% |
 
 ### Risk and Compliance
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
-| compliance_score | float64 | Regulatory compliance rating | score | 0% |
-| risk_assessment_score | float64 | Overall risk assessment | score | 0% |
-| insurance_coverage | category | Insurance coverage level | - | 0% |
-| contract_terms | category | Contract terms and conditions | - | 0% |
+| compliance_score | float64 | Regulatory compliance rating | score | 0.00% |
+| risk_assessment_score | float64 | Overall risk assessment | score | 0.00% |
+| insurance_coverage | category | Insurance coverage level | - | 0.00% |
+| contract_terms | category | Contract terms and conditions | - | 0.00% |
 
 ### Target Variables
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
-| supplier_risk_level | category | Supplier risk classification (Low, Medium, High, Critical) | - | 0% |
-| total_cost | float64 | Total transaction cost including all expenses | USD | 0% |
+| supplier_risk_level | category | Supplier risk classification (Low, Medium, High, Critical) | - | 0.00% |
+| total_cost | float64 | Total transaction cost including all expenses | USD | 0.00% |
 
 ## Data Quality Notes
 
@@ -100,10 +100,3 @@ Depends on:
 4. **handling_cost** - Product characteristics affect handling
 5. **supplier_location** - Geographic factors influence costs
 6. **product_quality_grade** - Higher quality may command premium pricing
-
-## Data Generation Notes
-- **Seed**: Randomized for novelty
-- **Distributions**: Realistic supply chain industry patterns
-- **Seasonality**: None (static snapshot)
-- **Correlations**: Maintains realistic supply chain relationships
-

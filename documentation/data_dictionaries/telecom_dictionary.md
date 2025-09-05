@@ -8,78 +8,78 @@ This dataset contains 550,000 synthetic customer records for telecommunications 
 ### Customer Information
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
-| customer_id | int64 | Unique customer identifier | - | 0% |
-| customer_age | int64 | Customer age in years | years | 0% |
-| customer_gender | category | Customer gender (Male, Female, Other) | - | 0% |
-| customer_location | category | Geographic location (Urban, Suburban, Rural) | - | 0% |
-| income_level | category | Income category (Low, Medium, High, Very High) | - | 0% |
-| education_level | category | Education attainment (High School, Bachelor, Master, PhD) | - | 0% |
+| customer_id | int64 | Unique customer identifier | - | 0.00% |
+| customer_age | int64 | Customer age in years | years | 0.00% |
+| customer_gender | category | Customer gender (Male, Female, Other) | - | 0.00% |
+| customer_location | category | Geographic location (Urban, Suburban, Rural) | - | 0.00% |
+| income_level | category | Income category (Low, Medium, High, Very High) | - | 0.00% |
+| education_level | category | Education attainment (High School, Bachelor, Master, PhD) | - | 0.00% |
 
 ### Service Information
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
-| service_type | category | Type of service (Mobile, Internet, TV, Bundle) | - | 0% |
-| plan_type | category | Service plan category (Basic, Standard, Premium, Unlimited) | - | 0% |
-| contract_length | int64 | Contract duration in months | months | 0% |
-| monthly_charge | float64 | Monthly service charge | USD | 0% |
-| total_charges | float64 | Total charges to date | USD | 0% |
-| service_start_date | datetime64[ns] | Date service was activated | date | 0% |
+| service_type | category | Type of service (Mobile, Internet, TV, Bundle) | - | 0.00% |
+| plan_type | category | Service plan category (Basic, Standard, Premium, Unlimited) | - | 0.00% |
+| contract_length | int64 | Contract duration in months | months | 0.00% |
+| monthly_charge | float64 | Monthly service charge | USD | 0.00% |
+| total_charges | float64 | Total charges to date | USD | 0.00% |
+| service_start_date | datetime64[ns] | Date service was activated | date | 0.00% |
 
 ### Usage Metrics
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
-| voice_minutes | float64 | Monthly voice call minutes | minutes | 0% |
-| data_usage_gb | float64 | Monthly data usage in GB | GB | 0% |
-| text_messages | int64 | Monthly text messages sent | count | 0% |
-| video_streaming_hours | float64 | Monthly video streaming hours | hours | 0% |
-| international_calls | int64 | Monthly international calls | count | 0% |
-| roaming_usage | float64 | Monthly roaming data usage | GB | 0% |
+| voice_minutes | float64 | Monthly voice call minutes | minutes | 0.00% |
+| data_usage_gb | float64 | Monthly data usage in GB | GB | 0.00% |
+| text_messages | int64 | Monthly text messages sent | count | 0.00% |
+| video_streaming_hours | float64 | Monthly video streaming hours | hours | 0.00% |
+| international_calls | int64 | Monthly international calls | count | 0.00% |
+| roaming_usage | float64 | Monthly roaming data usage | GB | 0.00% |
 
 ### Customer Behavior
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
-| customer_service_calls | int64 | Number of customer service calls | count | 0% |
-| technical_support_calls | int64 | Number of technical support calls | count | 0% |
-| billing_queries | int64 | Number of billing-related queries | count | 0% |
-| complaint_count | int64 | Number of complaints filed | count | 0% |
-| upgrade_requests | int64 | Number of service upgrade requests | count | 0% |
-| downgrade_requests | int64 | Number of service downgrade requests | count | 0% |
+| customer_service_calls | int64 | Number of customer service calls | count | 0.00% |
+| technical_support_calls | int64 | Number of technical support calls | count | 0.00% |
+| billing_queries | int64 | Number of billing-related queries | count | 0.00% |
+| complaint_count | int64 | Number of complaints filed | count | 0.00% |
+| upgrade_requests | int64 | Number of service upgrade requests | count | 0.00% |
+| downgrade_requests | int64 | Number of service downgrade requests | count | 0.00% |
 
 ### Service Quality
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
-| network_coverage_score | float64 | Network coverage quality rating | score | 0% |
-| call_drop_rate | float64 | Percentage of dropped calls | percentage | 0% |
-| data_speed_score | float64 | Data speed performance rating | score | 0% |
-| service_reliability | float64 | Overall service reliability score | score | 0% |
-| outage_frequency | int64 | Number of service outages experienced | count | 0% |
-| resolution_time_hours | float64 | Average issue resolution time | hours | 0% |
+| network_coverage_score | float64 | Network coverage quality rating | score | 0.00% |
+| call_drop_rate | float64 | Percentage of dropped calls | percentage | 0.00% |
+| data_speed_score | float64 | Data speed performance rating | score | 0.00% |
+| service_reliability | float64 | Overall service reliability score | score | 0.00% |
+| outage_frequency | int64 | Number of service outages experienced | count | 0.00% |
+| resolution_time_hours | float64 | Average issue resolution time | hours | 0.00% |
 
 ### Billing and Payment
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
-| payment_method | category | Payment method used | - | 0% |
-| paperless_billing | category | Whether paperless billing is enabled | - | 0% |
-| auto_pay_enabled | category | Whether automatic payment is enabled | - | 0% |
-| late_payment_count | int64 | Number of late payments | count | 0% |
-| payment_delay_days | int64 | Average payment delay in days | days | 0% |
-| billing_accuracy_score | float64 | Billing accuracy rating | score | 0% |
+| payment_method | category | Payment method used | - | 0.00% |
+| paperless_billing | category | Whether paperless billing is enabled | - | 0.00% |
+| auto_pay_enabled | category | Whether automatic payment is enabled | - | 0.00% |
+| late_payment_count | int64 | Number of late payments | count | 0.00% |
+| payment_delay_days | int64 | Average payment delay in days | days | 0.00% |
+| billing_accuracy_score | float64 | Billing accuracy rating | score | 0.00% |
 
 ### Customer Relationship
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
-| customer_since | datetime64[ns] | Date customer first subscribed | date | 0% |
-| loyalty_program_tier | category | Loyalty program membership level | - | 0% |
-| referral_count | int64 | Number of customers referred | count | 0% |
-| social_media_engagement | category | Social media engagement level | - | 0% |
-| app_usage_frequency | category | Mobile app usage frequency | - | 0% |
-| online_account_usage | category | Online account usage level | - | 0% |
+| customer_since | datetime64[ns] | Date customer first subscribed | date | 0.00% |
+| loyalty_program_tier | category | Loyalty program membership level | - | 0.00% |
+| referral_count | int64 | Number of customers referred | count | 0.00% |
+| social_media_engagement | category | Social media engagement level | - | 0.00% |
+| app_usage_frequency | category | Mobile app usage frequency | - | 0.00% |
+| online_account_usage | category | Online account usage level | - | 0.00% |
 
 ### Target Variables
 | Column Name | Data Type | Description | Unit | % Missing |
 |-------------|-----------|-------------|------|------------|
-| customer_churn | category | Customer churn status (Churned, Retained) | - | 0% |
-| satisfaction_score | float64 | Customer satisfaction rating | score | 0% |
+| customer_churn | category | Customer churn status (Churned, Retained) | - | 0.00% |
+| satisfaction_score | float64 | Customer satisfaction rating | score | 0.00% |
 
 ## Data Quality Notes
 
@@ -118,10 +118,3 @@ Depends on:
 4. **billing_accuracy_score** - Accurate billing increases satisfaction
 5. **resolution_time_hours** - Faster issue resolution improves satisfaction
 6. **customer_service_calls** - Fewer service calls indicate higher satisfaction
-
-## Data Generation Notes
-- **Seed**: Randomized for novelty
-- **Distributions**: Realistic telecommunications industry patterns
-- **Seasonality**: None (static snapshot)
-- **Correlations**: Maintains realistic telecom relationships
-
