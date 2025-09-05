@@ -9,7 +9,6 @@ __pycache__/
 # Internal documentation
 FILE_ORGANIZATION_STRATEGY.md
 REORGANIZATION_COMPLETE.md
-DEPLOY_TO_GITHUB.md
 
 # IDE files
 .vscode/
