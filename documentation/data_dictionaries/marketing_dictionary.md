@@ -75,6 +75,22 @@ A large-scale synthetic dataset representing digital customer interactions for a
 
 ---
 
+## Suggested Starting Questions
+
+**Classification — Churn Risk**
+
+1. *Can you build a model that predicts which customers are at high risk of churning? Which evaluation metric would you prioritize — accuracy, precision, or recall — and why does it matter for a retention campaign?*
+
+2. *The marketing team suspects that certain customer segments churn at very different rates. Investigate whether churn risk varies systematically across segments and propose a targeted intervention strategy.*
+
+**Regression — Customer Lifetime Value**
+
+3. *Develop a regression model to estimate customer lifetime value. How accurately can you predict CLV, and what does your model reveal about the most important drivers of long-term customer value?*
+
+4. *The CFO wants to allocate next quarter's marketing budget proportionally to customer value. Build a CLV prediction pipeline, evaluate its reliability, and identify customer profiles where your model is least accurate.*
+
+---
+
 ## Data Quality Notes
 
 This dataset contains intentional data quality challenges commonly found in real-world CRM systems:
