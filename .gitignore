@@ -1,4 +1,4 @@
-# Python files
+# Python source files (generators, utilities)
 *.py
 __pycache__/
 *.pyc
@@ -9,6 +9,14 @@ __pycache__/
 # Internal documentation
 FILE_ORGANIZATION_STRATEGY.md
 REORGANIZATION_COMPLETE.md
+
+# Analysis artifacts
+*.png
+education_missingness_detailed.csv
+
+# Junk files (accidental commits)
+tatus
+-files*
 
 # IDE files
 .vscode/

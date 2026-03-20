@@ -1,93 +1,86 @@
-# Marketing Dataset Data Dictionary
+# Marketing Dataset — Data Dictionary
 
 ## Overview
-This dataset contains 600,000 synthetic customer records for digital marketing analysis, including customer engagement, behavior patterns, and lifetime value prediction.
+A large-scale synthetic dataset representing digital customer interactions for a multi-channel e-commerce retailer. The dataset captures demographics, digital engagement, purchase behavior, and marketing response patterns across **600,000 customers**.
 
-## Column Descriptions
+| Property | Value |
+|----------|-------|
+| Records | 600,000 |
+| Columns | 29 |
+| Date range | Jan 2021 – Dec 2024 |
+| Target variables | 2 (1 classification, 1 regression) |
+
+---
+
+## Column Reference
 
 ### Customer Demographics
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| customer_id | int64 | Unique customer identifier | - | 0.00% |
-| age | int64 | Customer age in years | years | 0.00% |
-| gender | category | Customer gender (Male, Female, Other) | - | 0.00% |
-| location | category | Geographic location (Urban, Suburban, Rural) | - | 0.00% |
-| income_level | category | Income category (Low, Medium, High, Very High) | - | 0.21% |
-| education_level | category | Education attainment (High School, Bachelor, Master, PhD) | - | 0.00% |
 
-### Engagement Metrics
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| website_visits | int64 | Total website visits in last 30 days | count | 0.00% |
-| app_usage_hours | float64 | Mobile app usage time in hours | hours | 0.00% |
-| email_opens | int64 | Number of emails opened in last 30 days | count | 0.00% |
-| email_clicks | int64 | Number of email clicks in last 30 days | count | 0.00% |
-| social_media_engagement | float64 | Social media interaction score | score | 0.78% |
-| newsletter_subscription | category | Newsletter subscription status | - | 0.80% |
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `customer_id` | String | Unique customer identifier (MK0000001 format) | — |
+| `age` | Integer | Customer age at time of data collection | Years |
+| `income` | Float | Estimated annual household income | USD |
+| `education_level` | Categorical | Highest education attained: *High School, Some College, Bachelors, Graduate* | — |
+| `location_type` | Categorical | Primary residence area: *Urban, Suburban, Rural* | — |
 
-### Behavioral Patterns
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| purchase_frequency | int64 | Number of purchases in last 6 months | count | 0.70% |
-| avg_order_value | float64 | Average order value across purchases | USD | 0.18% |
-| last_purchase_days | int64 | Days since last purchase | days | 0.00% |
-| preferred_category | category | Most purchased product category | - | 0.00% |
-| customer_support_contacts | int64 | Number of support contacts in last 6 months | count | 0.00% |
-| satisfaction_score | float64 | Customer satisfaction rating | score | 0.00% |
+### Digital Engagement
 
-### Marketing Campaign Data
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| campaign_exposure | int64 | Number of marketing campaigns exposed to | count | 0.00% |
-| campaign_response_rate | float64 | Response rate to marketing campaigns | percentage | 0.00% |
-| discount_usage | int64 | Number of discount codes used | count | 0.00% |
-| referral_count | int64 | Number of customers referred | count | 0.00% |
-| loyalty_program_tier | category | Loyalty program membership level | - | 0.00% |
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `visit_frequency` | Integer | Website visits in the last 30 days | Count |
+| `session_duration` | Float | Average time per website session | Minutes |
+| `pages_per_session` | Integer | Average pages viewed per session | Count |
+| `bounce_rate` | Float | Proportion of single-page sessions | Ratio (0–1) |
+| `email_open_rate` | Float | Proportion of marketing emails opened | Ratio (0–1) |
+| `email_click_rate` | Float | Proportion of marketing emails clicked | Ratio (0–1) |
+| `social_engagement` | Integer | Social media interactions (likes, shares, comments) per month | Count |
+| `mobile_usage` | Float | Monthly hours spent on the company's mobile app | Hours |
 
-### Temporal Features
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| customer_since | datetime64[ns] | Date customer first registered | date | 0.00% |
-| last_activity_date | datetime64[ns] | Date of last customer activity | date | 0.00% |
+### Purchase & Loyalty
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `customer_segment` | Categorical | Loyalty tier: *Bronze, Silver, Gold, Platinum, Diamond* | — |
+| `purchase_frequency` | Categorical | Purchase cadence: *Rare, Occasional, Regular, Frequent, Very Frequent* | — |
+| `avg_order_value` | Float | Average dollar amount per order | USD |
+| `days_since_last_purchase` | Integer | Days elapsed since the customer's most recent purchase | Days |
+| `satisfaction_score` | Float | Most recent customer satisfaction survey result | Scale 1–10 |
+| `support_contacts` | Integer | Customer support interactions in the last 6 months | Count |
+| `discount_usage` | Integer | Number of discount/promo codes redeemed | Count |
+| `referral_count` | Integer | Number of new customers referred | Count |
+| `newsletter_months` | Integer | Duration of newsletter subscription | Months |
+
+### Marketing & Channel
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `marketing_channel` | Categorical | Primary acquisition channel: *Email, Social Media, Search, Display, Affiliate* | — |
+| `device_preference` | Categorical | Primary browsing device: *Desktop, Mobile, Tablet, Mixed* | — |
+| `campaign_response_rate` | Float | Response rate to targeted marketing campaigns | Ratio (0–1) |
+
+### Temporal
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `registration_date` | Datetime | Date the customer first registered | Date |
+| `last_activity_date` | Datetime | Date of the customer's most recent activity | Date |
 
 ### Target Variables
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| churn_risk | category | Customer churn risk level (Low, Medium, High) | - | 0.00% |
-| customer_lifetime_value | float64 | Predicted customer lifetime value | USD | 0.00% |
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `churn_risk` | Integer | Churn risk classification: 0 = Low, 1 = Medium, 2 = High | Class label |
+| `customer_lifetime_value` | Float | Predicted total customer value | USD |
+
+---
 
 ## Data Quality Notes
 
-### Missing Values (MNAR - 3%)
-- **Missingness Pattern**: Higher missingness in `satisfaction_score` for customers with low engagement
-- **Business Logic**: Less engaged customers may not provide feedback
+This dataset contains intentional data quality challenges commonly found in real-world CRM systems:
 
-### Outliers (0.2%)
-- **Engagement Outliers**: Extremely high website visits (>100/day) or app usage (>24 hours/day)
-- **Purchase Outliers**: Very high order values (>$10k) or purchase frequencies (>100/month)
-- **Age Outliers**: Unrealistic ages (<13 or >100)
+- **Missing values (~3%)** — Some fields have missing entries. The missingness is *not* random; it follows patterns that a careful analyst can identify.
+- **Outliers (~0.2%)** — A small number of records contain extreme values that require investigation.
+- **Entry errors (~5%)** — Some records contain implausible values (e.g., negative durations, impossible ages) that reflect real-world data-entry mistakes.
 
-### Entry Errors (≤30%)
-- **Engagement Errors**: Some customers show impossible usage patterns
-- **Date Errors**: Future dates in customer_since field
-- **Value Errors**: Negative values in count fields
-
-## Target Variable Dependencies
-
-### Churn Risk (Classification)
-Depends on:
-1. **last_purchase_days** - Primary predictor (negative correlation)
-2. **website_visits** - Low engagement increases churn risk
-3. **app_usage_hours** - Reduced app usage indicates churn risk
-4. **satisfaction_score** - Low satisfaction increases churn risk
-5. **customer_support_contacts** - High support needs may indicate dissatisfaction
-6. **email_engagement** - Low email interaction suggests disengagement
-
-### Customer Lifetime Value (Regression)
-Depends on:
-1. **avg_order_value** - Higher order values increase CLV
-2. **purchase_frequency** - More frequent purchases increase CLV
-3. **income_level** - Higher income associated with higher CLV
-4. **loyalty_program_tier** - Higher tiers indicate higher CLV
-5. **referral_count** - Referrals suggest high-value customers
-6. **campaign_response_rate** - Responsive customers tend to have higher CLV
+Students should plan a data-cleaning strategy **before** modeling.
