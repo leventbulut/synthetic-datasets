@@ -1,100 +1,104 @@
-# Healthcare Dataset Data Dictionary
+# Healthcare Dataset — Data Dictionary
 
-## Dataset Overview
-- **Total Rows**: 500,000 patient records
-- **Total Columns**: 22
-- **Date Range**: January 2022 - December 2023
-- **Target Variables**: 2 (1 classification, 1 regression)
+## Overview
+A large-scale synthetic dataset representing patient encounters at a multi-facility hospital system. The dataset captures patient demographics, admission details, vital signs, lab values, clinical metrics, and insurance information.
 
-## Column Descriptions
+| Property | Value |
+|----------|-------|
+| Records | 500,000 |
+| Columns | 21 |
+| Date range | Jan 2022 – Jun 2024 |
+| Target variables | 2 (1 classification, 1 regression) |
 
-### Patient Identifiers
-| Column Name | Type | Description | Unit | % Missing |
-|-------------|------|-------------|------|-----------|
-| `patient_id` | String | Unique patient identifier | N/A | 0.00% |
-| `admission_date` | Datetime | Date and time of hospital admission | YYYY-MM-DD | 0.00% |
-| `discharge_date` | Datetime | Date and time of hospital discharge | YYYY-MM-DD | 0.00% |
+---
 
-### Demographics
-| Column Name | Type | Description | Unit | % Missing |
-|-------------|------|-------------|------|-----------|
-| `age` | Integer | Patient age at admission | Years | 0.00% |
-| `gender` | Categorical | Patient gender | M/F | 0.00% |
+## Column Reference
 
-### Clinical Information
-| Column Name | Type | Description | Unit | % Missing |
-|-------------|------|-------------|------|-----------|
-| `admission_type` | Categorical | Type of hospital admission | Emergency/Elective/Urgent/Trauma | 0.00% |
-| `primary_diagnosis` | Categorical | Primary medical diagnosis category | Cardiovascular/Respiratory/Gastrointestinal/Neurological/Orthopedic | 0.00% |
-| `length_of_stay` | Integer | Number of days in hospital | Days | 0.00% |
-| `hospital_department` | Categorical | Hospital department where patient was treated | ICU/Cardiology/Emergency/General Medicine/Surgery/Pediatrics | 0.00% |
+### Patient Demographics
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `patient_id` | String | Unique patient identifier (HC0000001 format) | — |
+| `age` | Integer | Patient age at admission | Years |
+| `gender` | Categorical | Patient gender: M, F | — |
+
+### Admission Details
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `admission_type` | Categorical | Type of admission: Elective, Urgent, Emergency, Trauma | — |
+| `primary_diagnosis` | Categorical | Primary diagnosis category: Orthopedic, Gastrointestinal, Respiratory, Cardiovascular, Neurological | — |
+| `hospital_department` | Categorical | Treating department: Pediatrics, General Medicine, Emergency, Cardiology, Surgery, ICU | — |
+| `length_of_stay` | Integer | Total days in hospital | Days |
 
 ### Vital Signs
-| Column Name | Type | Description | Unit | % Missing |
-|-------------|------|-------------|------|-----------|
-| `systolic_bp` | Float | Systolic blood pressure | mmHg | 0.78% |
-| `diastolic_bp` | Float | Diastolic blood pressure | mmHg | 0.77% |
-| `heart_rate` | Float | Heart rate | Beats per minute | 0.79% |
-| `temperature` | Float | Body temperature | Fahrenheit | 0.00% |
 
-### Laboratory Values
-| Column Name | Type | Description | Unit | % Missing |
-|-------------|------|-------------|------|-----------|
-| `hemoglobin` | Float | Hemoglobin level | g/dL | 0.22% |
-| `creatinine` | Float | Serum creatinine level | mg/dL | 0.21% |
-| `glucose` | Float | Blood glucose level | mg/dL | 0.20% |
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `systolic_bp` | Float | Systolic blood pressure at admission | mmHg |
+| `diastolic_bp` | Float | Diastolic blood pressure at admission | mmHg |
+| `heart_rate` | Float | Heart rate at admission | BPM |
+| `temperature` | Float | Body temperature at admission | °F |
 
-### Administrative & Clinical Counts
-| Column Name | Type | Description | Unit | % Missing |
-|-------------|------|-------------|------|-----------|
-| `comorbidity_count` | Integer | Number of comorbid conditions | Count | 0.00% |
-| `medication_count` | Integer | Number of medications prescribed | Count | 0.00% |
-| `insurance_type` | Categorical | Type of health insurance | Medicare/Medicaid/Private/Self-Pay/Other | 0.00% |
+### Lab Values
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `hemoglobin` | Float | Hemoglobin level from blood panel | g/dL |
+| `creatinine` | Float | Creatinine level from blood panel | mg/dL |
+| `glucose` | Float | Blood glucose level | mg/dL |
+
+### Clinical Metrics
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `comorbidity_count` | Integer | Number of comorbid conditions | Count |
+| `medication_count` | Integer | Number of active medications | Count |
+
+### Insurance
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `insurance_type` | Categorical | Insurance coverage: Self-Pay, Other, Private, Medicaid, Medicare | — |
+
+### Temporal
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `admission_date` | Datetime | Date of hospital admission | Date |
+| `discharge_date` | Datetime | Date of hospital discharge | Date |
 
 ### Target Variables
-| Column Name | Type | Description | Unit | % Missing |
-|-------------|------|-------------|------|-----------|
-| `readmission_risk` | Integer | Classification target: Readmission risk level | 0=Low, 1=Medium, 2=High | 0.00% |
-| `total_cost` | Float | Regression target: Total hospitalization cost | USD | 0.00% |
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `readmission_risk` | Integer | Readmission risk: 0 = Low, 1 = Medium, 2 = High | Class label |
+| `total_cost` | Float | Total cost of hospital stay | USD |
+
+---
+
+## Suggested Starting Questions
+
+**Classification — Readmission Risk**
+
+1. *Can you build a model that predicts which patients are at high risk of readmission within 30 days? Which performance metric matters most — overall accuracy or catching high-risk patients — and how does this affect your model choice?*
+
+2. *Hospital administrators believe certain diagnosis categories and departments drive higher readmission rates. Investigate whether readmission risk varies systematically across clinical factors and propose targeted interventions.*
+
+**Regression — Total Cost**
+
+3. *Develop a regression model to estimate the total cost of a patient's hospital stay. What are the most important cost drivers, and how could the hospital use this model for budget planning?*
+
+4. *The CFO is concerned about cost variability. Build a cost prediction model and identify patient profiles where cost is hardest to predict. What does this tell the hospital about where to focus process improvement?*
+
+---
 
 ## Data Quality Notes
 
-### Missing Values (MNAR - Missing Not At Random)
-- **Overall missingness**: ~3%
-- **Vital signs**: Higher missingness for emergency admissions
-- **Lab values**: More likely to be missing in trauma/emergency cases
+This dataset contains intentional data quality challenges commonly found in real-world EHR systems:
 
-### Outliers (~0.2%)
-- Impossible vital sign values (e.g., BP >300, temperature >110°F)
-- These represent data entry errors or measurement artifacts
+- **Missing values (~3%)** — Some fields have missing entries. The missingness is *not* random; it follows patterns that a careful analyst can identify.
+- **Outliers (~0.2%)** — A small number of records contain extreme values that require investigation.
+- **Entry errors (~5%)** — Some records contain implausible values that reflect real-world data-entry mistakes.
 
-### Entry Errors (~30%)
-- Pediatric ages in adult dataset
-- Unrealistic length of stay values
-- Excessive medication counts
-
-## Data Dependencies
-
-### Readmission Risk (Classification Target)
-Depends on 5+ predictors:
-- Age (older patients higher risk)
-- Length of stay (longer stays higher risk)
-- Comorbidity count (more conditions higher risk)
-- Primary diagnosis (cardiovascular/neurological higher risk)
-- Insurance type (Medicare/Medicaid higher risk)
-
-### Total Cost (Regression Target)
-Depends on 5+ predictors:
-- Length of stay (primary driver)
-- Hospital department (ICU/Surgery highest)
-- Age (older patients slightly higher)
-- Primary diagnosis (neurological/cardiovascular higher)
-- Insurance type (private insurance higher)
-
-## Clinical Context
-This dataset represents a realistic hospital population with:
-- Typical age distribution (mean ~65 years)
-- Realistic vital sign ranges and correlations
-- Appropriate length of stay distributions
-- Realistic cost structures by department and diagnosis
-- Seasonal admission patterns over 2 years
+Students should plan a data-cleaning strategy **before** modeling.

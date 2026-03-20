@@ -1,129 +1,105 @@
-# Education Dataset Data Dictionary
+# Education Dataset — Data Dictionary
 
 ## Overview
-This dataset contains 300,000 synthetic student records for educational analysis, including academic performance, demographic factors, learning behaviors, and college readiness assessment.
+A large-scale synthetic dataset representing high school student records. The dataset captures academic performance, study habits, school environment, family background, and well-being indicators.
 
-## Column Descriptions
+| Property | Value |
+|----------|-------|
+| Records | 300,000 |
+| Columns | 22 |
+| Date range | Jan 2022 – Sep 2024 |
+| Target variables | 2 (1 classification, 1 regression) |
 
-### Student Demographics
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| student_id | int64 | Unique student identifier | - | 0.00% |
-| student_age | int64 | Student age in years | years | 0.00% |
-| student_gender | category | Student gender (Male, Female, Other) | - | 0.00% |
-| ethnicity | category | Student ethnicity | - | 0.00% |
-| family_income | category | Family income level (Low, Medium, High, Very High) | - | 0.09% |
-| parent_education | category | Highest parent education level | - | 0.09% |
+---
 
-### Academic Information
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| grade_level | int64 | Current grade level (9-12) | grade | 0.00% |
-| school_type | category | Type of school (Public, Private, Charter) | - | 0.00% |
-| school_rating | float64 | School performance rating | score | 0.00% |
-| class_size | int64 | Average class size | students | 0.00% |
-| teacher_experience | float64 | Average teacher experience in years | years | 0.00% |
-| curriculum_type | category | Type of curriculum (Standard, Advanced, IB, AP) | - | 0.00% |
+## Column Reference
 
-### Academic Performance
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| gpa | float64 | Grade Point Average | score | 0.00% |
-| math_score | float64 | Mathematics standardized test score | score | 0.00% |
-| reading_score | float64 | Reading standardized test score | score | 0.00% |
-| science_score | float64 | Science standardized test score | score | 0.00% |
-| writing_score | float64 | Writing standardized test score | score | 0.00% |
-| overall_academic_score | float64 | Composite academic performance score | score | 0.00% |
+### Student Profile
 
-### Learning Behaviors
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| study_hours_per_week | float64 | Hours spent studying per week | hours | 0.79% |
-| homework_completion_rate | float64 | Percentage of homework completed | percentage | 0.91% |
-| class_attendance_rate | float64 | Percentage of classes attended | percentage | 0.00% |
-| participation_score | float64 | Class participation rating | score | 0.00% |
-| time_management_score | float64 | Time management skills rating | score | 0.00% |
-| organization_score | float64 | Organizational skills rating | score | 0.00% |
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `student_id` | String | Unique student identifier | — |
+| `age` | Integer | Student age | Years |
+| `gender` | Categorical | Student gender: Female, Male | — |
 
-### Extracurricular Activities
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| sports_participation | category | Sports participation level | - | 0.00% |
-| club_membership | int64 | Number of clubs/organizations joined | count | 0.82% |
-| leadership_roles | int64 | Number of leadership positions held | count | 0.00% |
-| community_service_hours | float64 | Community service hours completed | hours | 0.00% |
-| artistic_activities | category | Participation in artistic activities | - | 0.00% |
-| technology_engagement | category | Technology and coding engagement | - | 0.00% |
+### Academic Metrics
 
-### Social and Emotional Factors
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| peer_relationships | float64 | Peer relationship quality score | score | 0.00% |
-| teacher_relationships | float64 | Teacher relationship quality score | score | 0.00% |
-| self_confidence_score | float64 | Self-confidence assessment score | score | 0.00% |
-| stress_level | category | Perceived stress level | - | 0.00% |
-| motivation_score | float64 | Academic motivation rating | score | 0.00% |
-| resilience_score | float64 | Resilience and coping skills rating | score | 0.00% |
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `gpa` | Float | Cumulative GPA | Scale 0–4 |
+| `sat_score` | Integer | SAT test score | Score 600–1600 |
+| `ap_courses_taken` | Integer | Number of AP courses completed | Count |
+| `attendance_rate` | Float | Class attendance rate | Ratio (0–1) |
 
-### Family and Support
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| family_support_score | float64 | Family support for education rating | score | 0.00% |
-| parent_involvement | category | Level of parent involvement in education | - | 0.00% |
-| tutoring_received | category | Whether student receives tutoring | - | 0.00% |
-| learning_disability | category | Presence of learning disabilities | - | 0.00% |
-| special_education_services | category | Receipt of special education services | - | 0.00% |
-| english_language_learner | category | English language learner status | - | 0.00% |
+### Study Habits
 
-### Technology Access
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| computer_access | category | Access to computer at home | - | 0.09% |
-| internet_access | category | Access to internet at home | - | 0.00% |
-| digital_literacy_score | float64 | Digital literacy skills rating | score | 0.00% |
-| online_learning_experience | category | Experience with online learning | - | 0.00% |
-| technology_comfort_level | category | Comfort level with technology | - | 0.00% |
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `study_hours_week` | Float | Average weekly study hours | Hours |
+| `tutoring_hours` | Float | Weekly tutoring hours | Hours |
+| `library_visits_week` | Integer | Library visits per week | Count |
+| `online_resource_hours` | Float | Weekly hours using online resources | Hours |
+
+### School Environment
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `school_type` | Categorical | School type: Public, Charter, Private | — |
+| `class_size` | Integer | Average class size | Students |
+
+### Family Background
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `family_income` | Float | Family annual income | USD |
+| `parent_education` | Categorical | Highest parental education: No College, Some College, Bachelors, Graduate | — |
+
+### Well-Being
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `extracurricular_count` | Integer | Number of extracurricular activities | Count |
+| `discipline_incidents` | Integer | Discipline incidents on record | Count |
+| `sleep_hours` | Float | Average nightly sleep | Hours |
+| `stress_level` | Float | Self-reported stress level | Scale 1–10 |
+
+### Temporal
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `enrollment_date` | Datetime | Date of enrollment | Date |
 
 ### Target Variables
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| academic_performance_level | category | Academic performance classification (Below Average, Average, Above Average, Excellent) | - | 0.00% |
-| college_readiness_score | float64 | College readiness assessment score | score | 0.00% |
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `academic_performance` | Integer | Performance level: 0 = High, 1 = Medium, 2 = Low | Class label |
+| `college_readiness_score` | Float | College readiness index | Scale 10–100 |
+
+---
+
+## Suggested Starting Questions
+
+**Classification — Academic Performance**
+
+1. *Build a model to predict which students are at risk of low academic performance. What factors matter most, and how could a school counselor use this model for early intervention?*
+
+2. *The school board wants to understand whether the drivers of academic success differ across school types and family backgrounds. Investigate this and recommend equitable support policies.*
+
+**Regression — College Readiness Score**
+
+3. *Develop a regression model to estimate college readiness scores. What combination of academic and non-academic factors best predicts readiness, and what does this suggest about holistic student development?*
+
+4. *The district is evaluating tutoring and AP program effectiveness. Analyze whether students who use tutoring or take AP courses have higher readiness scores, controlling for other factors.*
+
+---
 
 ## Data Quality Notes
 
-### Missing Values (MNAR - 3%)
-- **Missingness Pattern**: Higher missingness in `satisfaction_score` for students with low academic performance
-- **Business Logic**: Struggling students may not complete all assessments
+This dataset contains intentional data quality challenges commonly found in real-world student information systems (SIS):
 
-### Outliers (0.2%)
-- **Score Outliers**: Perfect scores (100%) or extremely low scores (<10%)
-- **Age Outliers**: Unrealistic student ages (<13 or >20)
-- **Time Outliers**: Negative study hours or impossible attendance rates
-- **GPA Outliers**: GPAs above 4.0 or negative values
+- **Missing values (~3%)** — Some fields have missing entries. The missingness is *not* random; it follows patterns that a careful analyst can identify.
+- **Outliers (~0.2%)** — A small number of records contain extreme values that require investigation.
+- **Entry errors (~5%)** — Some records contain implausible values that reflect real-world data-entry mistakes.
 
-### Entry Errors (≤30%)
-- **Score Errors**: Some students show inconsistent performance across subjects
-- **Date Errors**: Future enrollment dates or impossible grade sequences
-- **Value Errors**: Negative scores or impossible percentages
-- **Demographic Errors**: Inconsistent demographic information
-
-## Target Variable Dependencies
-
-### Academic Performance Level (Classification)
-Depends on:
-1. **gpa** - Primary predictor (positive correlation)
-2. **overall_academic_score** - Higher scores indicate better performance
-3. **study_hours_per_week** - More study time improves performance
-4. **homework_completion_rate** - Higher completion rates improve performance
-5. **class_attendance_rate** - Better attendance improves performance
-6. **family_income** - Higher income associated with better performance
-
-### College Readiness Score (Regression)
-Depends on:
-1. **overall_academic_score** - Primary predictor
-2. **gpa** - Higher GPA increases readiness
-3. **standardized_test_scores** - Better test scores indicate readiness
-4. **study_hours_per_week** - More study time improves readiness
-5. **extracurricular_activities** - Well-rounded students have higher readiness
-6. **family_support_score** - Family support improves readiness
+Students should plan a data-cleaning strategy **before** modeling.

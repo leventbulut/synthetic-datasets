@@ -1,83 +1,86 @@
-# Finance Dataset Data Dictionary
+# Finance Dataset — Data Dictionary
 
 ## Overview
-This dataset contains 750,000 synthetic customer records for financial services analysis, including credit risk assessment, fraud detection, and customer behavior analysis.
+A large-scale synthetic dataset representing customer profiles at a consumer bank. The dataset captures demographics, employment, credit behavior, account activity, and investment patterns.
 
-## Column Descriptions
+| Property | Value |
+|----------|-------|
+| Records | 750,000 |
+| Columns | 23 |
+| Date range | Jan 2019 – Dec 2024 |
+| Target variables | 2 (1 classification, 1 regression) |
+
+---
+
+## Column Reference
 
 ### Customer Demographics
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| customer_id | int64 | Unique customer identifier | - | 0.00% |
-| age | int64 | Customer age in years | years | 0.00% |
-| income_level | category | Income category (Low, Medium, High, Very High) | - | 0.00% |
-| education_level | category | Education attainment (High School, Bachelor, Master, PhD) | - | 0.00% |
-| employment_status | category | Current employment status | - | 0.00% |
-| credit_score | int64 | FICO credit score | score | 0.00% |
 
-### Financial Metrics
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| annual_income | float64 | Annual income amount | USD | 0.01% |
-| credit_limit | float64 | Total credit limit across all accounts | USD | 0.00% |
-| total_debt | float64 | Total outstanding debt | USD | 0.00% |
-| debt_to_income_ratio | float64 | Ratio of debt to annual income | ratio | 0.98% |
-| credit_utilization | float64 | Percentage of credit limit used | percentage | 0.98% |
-| payment_history_score | float64 | Score based on payment timeliness | score | 1.00% |
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `customer_id` | String | Unique customer identifier (FN0000001 format) | — |
+| `age` | Integer | Customer age | Years |
+| `income` | Float | Annual household income | USD |
+| `credit_score` | Integer | FICO credit score | Score 300–850 |
+| `employment_years` | Float | Years with current employer | Years |
+| `employment_status` | Categorical | Employment type: Unemployed, Part-time, Self-employed, Full-time, Retired | — |
+| `education_level` | Categorical | Highest education: High School, Some College, Bachelor, Master, PhD | — |
+| `marital_status` | Categorical | Marital status: Single, Married, Divorced, Widowed | — |
+| `home_ownership` | Categorical | Home status: Rent, Mortgage, Own, Other | — |
+| `region` | Categorical | Geographic region: Northeast, Southeast, Midwest, Southwest, West | — |
 
-### Account Behavior
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| account_age_months | int64 | Age of oldest account in months | months | 0.00% |
-| num_credit_cards | int64 | Number of active credit cards | count | 0.00% |
-| num_loans | int64 | Number of active loans | count | 0.00% |
-| avg_monthly_payment | float64 | Average monthly payment amount | USD | 0.02% |
-| late_payments_90d | int64 | Number of payments 90+ days late | count | 0.00% |
-| recent_inquiries | int64 | Credit inquiries in last 6 months | count | 0.00% |
+### Account & Credit Behavior
 
-### Temporal Features
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| customer_since | datetime64[ns] | Date customer opened first account | date | 0.00% |
-| last_activity_date | datetime64[ns] | Date of last account activity | date | 0.00% |
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `account_age_months` | Integer | Age of primary bank account | Months |
+| `monthly_spending` | Float | Average monthly card spending | USD |
+| `credit_utilization` | Float | Credit utilization ratio | Ratio (0–1) |
+| `num_credit_cards` | Integer | Number of active credit cards | Count |
+| `num_loans` | Integer | Number of active loans | Count |
+| `late_payment_months` | Integer | Months with late payments in last 2 years | Count |
+| `debt_to_income` | Float | Debt-to-income ratio | Ratio |
+| `savings_rate` | Float | Savings rate as fraction of income | Ratio (0–1) |
+| `investment_value` | Float | Total investment portfolio value | USD |
+
+### Temporal
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `account_creation_date` | Datetime | Date the primary account was created | Date |
+| `last_transaction_date` | Datetime | Date of the most recent transaction | Date |
 
 ### Target Variables
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| credit_risk_level | category | Credit risk classification (Low, Medium, High, Very High) | - | 0.00% |
-| fraud_risk_score | float64 | Fraud risk probability score | probability | 0.00% |
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `credit_risk` | Integer | Credit risk classification: 0–3 (Very Low to High) | Class label |
+| `fraud_risk_score` | Float | Fraud risk index | Score |
+
+---
+
+## Suggested Starting Questions
+
+**Classification — Credit Risk**
+
+1. *Build a classification model to predict a customer's credit risk level. Which features are most predictive, and how would a loan officer use this model to make faster decisions?*
+
+2. *The risk management team suspects that credit risk drivers differ across employment types and income brackets. Investigate this hypothesis and recommend segment-specific lending policies.*
+
+**Regression — Fraud Risk Score**
+
+3. *Develop a regression model to estimate a customer's fraud risk score. What behavioral patterns are associated with higher fraud risk, and how would you flag suspicious accounts?*
+
+4. *The compliance team needs to prioritize account reviews. Build a fraud scoring pipeline and identify which customer profiles produce the most false positives. How would you reduce them?*
+
+---
 
 ## Data Quality Notes
 
-### Missing Values (MNAR - 3%)
-- **Missingness Pattern**: Higher missingness in `payment_history_score` for customers with poor credit scores
-- **Business Logic**: Customers with low credit scores may have incomplete payment histories
+This dataset contains intentional data quality challenges commonly found in real-world banking CRM systems:
 
-### Outliers (0.2%)
-- **Income Outliers**: Very high income values (>$500k) and very low income values (<$5k)
-- **Credit Score Outliers**: Extremely low scores (<300) and perfect scores (850)
-- **Debt Outliers**: Unusually high debt-to-income ratios (>10)
+- **Missing values (~3%)** — Some fields have missing entries. The missingness is *not* random; it follows patterns that a careful analyst can identify.
+- **Outliers (~0.2%)** — A small number of records contain extreme values that require investigation.
+- **Entry errors (~5%)** — Some records contain implausible values that reflect real-world data-entry mistakes.
 
-### Entry Errors (≤30%)
-- **Age Errors**: Some customers show unrealistic ages (<18 or >100)
-- **Income Errors**: Inconsistent income levels vs. employment status
-- **Date Errors**: Some future dates in customer_since field
-
-## Target Variable Dependencies
-
-### Credit Risk Level (Classification)
-Depends on:
-1. **credit_score** - Primary predictor (negative correlation)
-2. **debt_to_income_ratio** - High ratio increases risk
-3. **payment_history_score** - Poor payment history increases risk
-4. **credit_utilization** - High utilization indicates risk
-5. **late_payments_90d** - Recent late payments increase risk
-6. **income_level** - Lower income associated with higher risk
-
-### Fraud Risk Score (Regression)
-Depends on:
-1. **recent_inquiries** - Multiple inquiries may indicate fraud
-2. **payment_history_score** - Sudden changes in payment behavior
-3. **credit_utilization** - Unusual utilization patterns
-4. **account_age_months** - New accounts may have higher fraud risk
-5. **income_level** vs **credit_limit** - Mismatch may indicate fraud
+Students should plan a data-cleaning strategy **before** modeling.

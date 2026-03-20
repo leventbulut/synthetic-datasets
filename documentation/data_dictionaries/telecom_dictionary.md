@@ -1,120 +1,100 @@
-# Telecommunications Dataset Data Dictionary
+# Telecommunications Dataset — Data Dictionary
 
 ## Overview
-This dataset contains 550,000 synthetic customer records for telecommunications analysis, including service usage, customer behavior, churn prediction, and satisfaction analysis.
+A large-scale synthetic dataset representing subscribers at a mobile and broadband provider. The dataset captures demographics, plan details, usage metrics, service quality, and billing patterns.
 
-## Column Descriptions
+| Property | Value |
+|----------|-------|
+| Records | 550,000 |
+| Columns | 22 |
+| Date range | Jan 2021 – Dec 2024 |
+| Target variables | 2 (1 classification, 1 regression) |
 
-### Customer Information
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| customer_id | int64 | Unique customer identifier | - | 0.00% |
-| customer_age | int64 | Customer age in years | years | 0.00% |
-| customer_gender | category | Customer gender (Male, Female, Other) | - | 0.00% |
-| customer_location | category | Geographic location (Urban, Suburban, Rural) | - | 0.00% |
-| income_level | category | Income category (Low, Medium, High, Very High) | - | 0.00% |
-| education_level | category | Education attainment (High School, Bachelor, Master, PhD) | - | 0.00% |
+---
 
-### Service Information
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| service_type | category | Type of service (Mobile, Internet, TV, Bundle) | - | 9.98% |
-| plan_type | category | Service plan category (Basic, Standard, Premium, Unlimited) | - | 0.00% |
-| contract_length | int64 | Contract duration in months | months | 0.00% |
-| monthly_charge | float64 | Monthly service charge | USD | 0.00% |
-| total_charges | float64 | Total charges to date | USD | 0.00% |
-| service_start_date | datetime64[ns] | Date service was activated | date | 0.00% |
+## Column Reference
 
-### Usage Metrics
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| voice_minutes | float64 | Monthly voice call minutes | minutes | 0.93% |
-| data_usage_gb | float64 | Monthly data usage in GB | GB | 0.07% |
-| text_messages | int64 | Monthly text messages sent | count | 0.94% |
-| video_streaming_hours | float64 | Monthly video streaming hours | hours | 0.00% |
-| international_calls | int64 | Monthly international calls | count | 0.00% |
-| roaming_usage | float64 | Monthly roaming data usage | GB | 0.00% |
+### Subscriber Profile
 
-### Customer Behavior
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| customer_service_calls | int64 | Number of customer service calls | count | 0.84% |
-| technical_support_calls | int64 | Number of technical support calls | count | 0.06% |
-| billing_queries | int64 | Number of billing-related queries | count | 0.00% |
-| complaint_count | int64 | Number of complaints filed | count | 0.00% |
-| upgrade_requests | int64 | Number of service upgrade requests | count | 0.00% |
-| downgrade_requests | int64 | Number of service downgrade requests | count | 0.00% |
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `customer_id` | String | Unique subscriber identifier | — |
+| `age` | Integer | Subscriber age | Years |
+| `tenure_months` | Integer | Months as an active subscriber | Months |
+
+### Plan & Contract
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `plan_type` | Categorical | Service plan: Basic, Standard, Premium, Enterprise | — |
+| `monthly_charge` | Float | Monthly bill amount | USD |
+| `contract_type` | Categorical | Contract term: Month-to-month, One year, Two year | — |
+| `payment_method` | Categorical | Payment method: Paper check, Electronic check, Bank transfer, Credit card | — |
+| `paperless_billing` | Categorical | Paperless billing: Yes, No | — |
+
+### Usage
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `data_usage_gb` | Float | Monthly data consumption | GB |
+| `call_minutes` | Integer | Monthly voice minutes used | Minutes |
+| `sms_count` | Integer | Monthly SMS messages sent | Count |
+| `num_add_on_services` | Integer | Number of active add-on services | Count |
 
 ### Service Quality
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| network_coverage_score | float64 | Network coverage quality rating | score | 0.00% |
-| call_drop_rate | float64 | Percentage of dropped calls | percentage | 0.00% |
-| data_speed_score | float64 | Data speed performance rating | score | 0.00% |
-| service_reliability | float64 | Overall service reliability score | score | 0.00% |
-| outage_frequency | int64 | Number of service outages experienced | count | 0.00% |
-| resolution_time_hours | float64 | Average issue resolution time | hours | 0.00% |
 
-### Billing and Payment
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| payment_method | category | Payment method used | - | 0.00% |
-| paperless_billing | category | Whether paperless billing is enabled | - | 0.00% |
-| auto_pay_enabled | category | Whether automatic payment is enabled | - | 0.00% |
-| late_payment_count | int64 | Number of late payments | count | 0.00% |
-| payment_delay_days | int64 | Average payment delay in days | days | 0.00% |
-| billing_accuracy_score | float64 | Billing accuracy rating | score | 0.00% |
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `network_reliability` | Float | Network uptime ratio | Ratio (0–1) |
+| `avg_download_speed` | Float | Average download speed | Mbps |
+| `customer_service_calls` | Integer | Service calls in last 6 months | Count |
+| `complaint_count` | Integer | Formal complaints in last 12 months | Count |
 
-### Customer Relationship
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| customer_since | datetime64[ns] | Date customer first subscribed | date | 0.00% |
-| loyalty_program_tier | category | Loyalty program membership level | - | 0.00% |
-| referral_count | int64 | Number of customers referred | count | 0.00% |
-| social_media_engagement | category | Social media engagement level | - | 0.00% |
-| app_usage_frequency | category | Mobile app usage frequency | - | 0.00% |
-| online_account_usage | category | Online account usage level | - | 0.00% |
+### Loyalty
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `referral_count` | Integer | Friends/family referred | Count |
+| `late_payment_count` | Integer | Late payments in last 12 months | Count |
+
+### Temporal
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `signup_date` | Datetime | Date of initial subscription | Date |
+| `last_activity_date` | Datetime | Date of most recent account activity | Date |
 
 ### Target Variables
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| customer_churn | category | Customer churn status (Churned, Retained) | - | 0.00% |
-| satisfaction_score | float64 | Customer satisfaction rating | score | 0.00% |
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `churn_prediction` | Integer | Churn classification: 0–2 | Class label |
+| `satisfaction_score` | Float | Customer satisfaction survey result | Scale 1–10 |
+
+---
+
+## Suggested Starting Questions
+
+**Classification — Churn Prediction**
+
+1. *Build a churn prediction model. Which subscriber behaviors are the strongest early warning signals, and how far in advance can you reliably predict churn?*
+
+2. *The retention team has a limited budget for targeted offers. Investigate whether churn drivers differ between plan types and contract lengths, and recommend segment-specific retention strategies.*
+
+**Regression — Satisfaction Score**
+
+3. *Develop a regression model to predict customer satisfaction scores. What aspects of service quality matter most, and which operational improvements would yield the biggest satisfaction gains?*
+
+4. *The product team is considering new add-on services. Analyze the relationship between current add-ons, usage patterns, and satisfaction. Which customer profiles would benefit most from new offerings?*
+
+---
 
 ## Data Quality Notes
 
-### Missing Values (MNAR - 3%)
-- **Missingness Pattern**: Higher missingness in `satisfaction_score` for customers with low usage
-- **Business Logic**: Low-usage customers may not provide satisfaction feedback
+This dataset contains intentional data quality challenges commonly found in real-world telecom billing and CRM systems:
 
-### Outliers (0.2%)
-- **Usage Outliers**: Extremely high data usage (>1000 GB) or voice minutes (>10000)
-- **Age Outliers**: Unrealistic customer ages (<13 or >100)
-- **Cost Outliers**: Very high monthly charges (>$500) or negative values
-- **Score Outliers**: Perfect scores (10.0) or extremely low scores (<1.0)
+- **Missing values (~3%)** — Some fields have missing entries. The missingness is *not* random; it follows patterns that a careful analyst can identify.
+- **Outliers (~0.2%)** — A small number of records contain extreme values that require investigation.
+- **Entry errors (~5%)** — Some records contain implausible values that reflect real-world data-entry mistakes.
 
-### Entry Errors (≤30%)
-- **Usage Errors**: Some customers show impossible usage patterns
-- **Date Errors**: Future service start dates or impossible sequences
-- **Cost Errors**: Negative charges or inconsistent pricing
-- **Behavior Errors**: Inconsistent customer behavior patterns
-
-## Target Variable Dependencies
-
-### Customer Churn (Classification)
-Depends on:
-1. **customer_service_calls** - Primary predictor (positive correlation with churn)
-2. **complaint_count** - Higher complaints increase churn risk
-3. **satisfaction_score** - Lower satisfaction increases churn risk
-4. **call_drop_rate** - Poor network quality increases churn risk
-5. **resolution_time_hours** - Longer resolution times increase churn risk
-6. **late_payment_count** - Payment issues indicate churn risk
-
-### Satisfaction Score (Regression)
-Depends on:
-1. **network_coverage_score** - Better coverage improves satisfaction
-2. **data_speed_score** - Faster speeds increase satisfaction
-3. **service_reliability** - More reliable service improves satisfaction
-4. **billing_accuracy_score** - Accurate billing increases satisfaction
-5. **resolution_time_hours** - Faster issue resolution improves satisfaction
-6. **customer_service_calls** - Fewer service calls indicate higher satisfaction
+Students should plan a data-cleaning strategy **before** modeling.

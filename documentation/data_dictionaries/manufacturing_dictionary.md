@@ -1,111 +1,99 @@
-# Manufacturing Dataset Data Dictionary
+# Manufacturing Dataset — Data Dictionary
 
 ## Overview
-This dataset contains 400,000 synthetic production batch records for manufacturing analysis, including quality control, production efficiency, cost management, and process optimization.
+A large-scale synthetic dataset representing production batch records from a multi-line manufacturing facility. The dataset captures machine parameters, environmental conditions, operator metrics, and quality outcomes.
 
-## Column Descriptions
+| Property | Value |
+|----------|-------|
+| Records | 400,000 |
+| Columns | 21 |
+| Date range | Jan 2022 – Sep 2024 |
+| Target variables | 2 (1 classification, 1 regression) |
 
-### Batch Information
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| batch_id | int64 | Unique batch identifier | - | 0.00% |
-| product_id | int64 | Unique product identifier | - | 0.00% |
-| production_line | category | Production line identifier | - | 0.00% |
-| shift_type | category | Production shift (Day, Night, Weekend) | - | 0.00% |
-| batch_size | int64 | Number of units in batch | units | 0.00% |
+---
 
-### Production Parameters
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| temperature | float64 | Production temperature | Celsius | 0.00% |
-| pressure | float64 | Production pressure | PSI | 0.98% |
-| humidity | float64 | Production humidity | percentage | 0.98% |
-| speed | float64 | Production line speed | units/hour | 0.00% |
-| material_quality | category | Raw material quality grade | - | 0.02% |
-| operator_id | int64 | Production operator identifier | - | 0.00% |
+## Column Reference
 
-### Quality Metrics
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| defect_count | int64 | Number of defective units | count | 0.00% |
-| defect_rate | float64 | Percentage of defective units | percentage | 0.00% |
-| quality_score | float64 | Overall quality rating | score | 0.02% |
-| inspection_result | category | Quality inspection outcome | - | 0.00% |
-| rework_required | category | Whether rework is needed | - | 0.00% |
+### Production Identity
 
-### Performance Metrics
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| cycle_time | float64 | Time per unit production | minutes | 0.00% |
-| downtime_minutes | float64 | Production downtime duration | minutes | 0.00% |
-| efficiency_score | float64 | Production efficiency rating | score | 0.02% |
-| throughput | float64 | Units produced per hour | units/hour | 0.00% |
-| yield_rate | float64 | Percentage of good units | percentage | 0.96% |
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `record_id` | String | Unique production record ID | — |
+| `product_line` | Categorical | Product line: Electronics, Automotive, Consumer Goods, Industrial | — |
+| `batch_size` | Integer | Units produced in the batch | Count |
+| `shift` | Categorical | Production shift: Day, Evening, Night | — |
 
-### Cost Information
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| material_cost | float64 | Raw material cost per unit | USD | 0.00% |
-| labor_cost | float64 | Labor cost per unit | USD | 0.00% |
-| overhead_cost | float64 | Overhead cost per unit | USD | 0.00% |
-| total_cost | float64 | Total cost per unit | USD | 0.00% |
-| cost_variance | float64 | Cost variance from standard | USD | 0.00% |
+### Machine & Operator
 
-### Environmental Conditions
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| ambient_temperature | float64 | Ambient temperature | Celsius | 0.00% |
-| air_quality | category | Air quality rating | - | 0.00% |
-| noise_level | float64 | Production noise level | decibels | 0.00% |
-| vibration_level | float64 | Equipment vibration level | mm/s | 0.00% |
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `machine_age_years` | Float | Age of production machine | Years |
+| `operator_experience` | Float | Operator experience level | Years |
 
-### Temporal Features
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| start_time | datetime64[ns] | Batch production start time | datetime | 0.00% |
-| completion_time | datetime64[ns] | Batch completion time | datetime | 0.00% |
-| production_date | datetime64[ns] | Date of production | date | 0.00% |
+### Process Conditions
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `temperature_c` | Float | Production environment temperature | °C |
+| `humidity_pct` | Float | Production environment humidity | Percent |
+| `vibration_level` | Float | Machine vibration intensity | mm/s |
+| `power_consumption` | Float | Machine power draw during production | kW |
+| `cycle_time_sec` | Float | Average cycle time per unit | Seconds |
+
+### Quality & Materials
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `defect_rate` | Float | Batch defect rate | Ratio (0–1) |
+| `scrap_rate` | Float | Material scrap rate | Ratio (0–1) |
+| `raw_material_cost` | Float | Raw material cost per unit | USD |
+| `supplier_quality_index` | Float | Incoming material quality score | Scale 30–100 |
+
+### Maintenance
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `maintenance_hours` | Float | Maintenance hours in last 30 days | Hours |
+| `downtime_minutes` | Integer | Unplanned downtime during batch | Minutes |
+
+### Temporal
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `production_date` | Datetime | Date of production | Date |
+| `inspection_date` | Datetime | Date of quality inspection | Date |
 
 ### Target Variables
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| quality_grade | category | Final quality classification (A, B, C, D) | - | 0.00% |
-| production_cost | float64 | Total production cost per unit | USD | 0.00% |
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `quality_level` | Integer | Quality classification: 0 = High, 1 = Medium, 2 = Low | Class label |
+| `production_cost` | Float | Total production cost for the batch | USD |
+
+---
+
+## Suggested Starting Questions
+
+**Classification — Quality Level**
+
+1. *Build a model to predict batch quality level. Which process parameters are most important for maintaining high quality, and what thresholds would you recommend for real-time monitoring?*
+
+2. *The quality engineering team suspects that machine age and operator experience interact to affect quality outcomes. Investigate this relationship and propose a predictive maintenance schedule.*
+
+**Regression — Production Cost**
+
+3. *Develop a regression model to estimate production cost per batch. What are the main cost drivers, and where should the operations team focus to reduce costs without compromising quality?*
+
+4. *The plant manager wants to optimize shift scheduling. Analyze whether production costs and quality vary by shift, and build a model that accounts for shift-level effects.*
+
+---
 
 ## Data Quality Notes
 
-### Missing Values (MNAR - 3%)
-- **Missingness Pattern**: Higher missingness in `quality_score` for batches with low defect rates
-- **Business Logic**: High-quality batches may not require detailed quality scoring
+This dataset contains intentional data quality challenges commonly found in real-world MES (Manufacturing Execution Systems):
 
-### Outliers (0.2%)
-- **Temperature Outliers**: Extremely high temperatures (>200°C) or very low temperatures (<-50°C)
-- **Cost Outliers**: Very high costs (>$1000/unit) or negative costs
-- **Efficiency Outliers**: Efficiency scores >100% or negative values
-- **Time Outliers**: Negative cycle times or extremely long production times
+- **Missing values (~3%)** — Some fields have missing entries. The missingness is *not* random; it follows patterns that a careful analyst can identify.
+- **Outliers (~0.2%)** — A small number of records contain extreme values that require investigation.
+- **Entry errors (~5%)** — Some records contain implausible values that reflect real-world data-entry mistakes.
 
-### Entry Errors (≤30%)
-- **Parameter Errors**: Some batches show impossible parameter combinations
-- **Date Errors**: Completion times before start times
-- **Cost Errors**: Inconsistent cost calculations
-- **Quality Errors**: Defect counts exceeding batch sizes
-
-## Target Variable Dependencies
-
-### Quality Grade (Classification)
-Depends on:
-1. **defect_rate** - Primary predictor (negative correlation)
-2. **quality_score** - Higher scores indicate better quality
-3. **material_quality** - Better materials improve quality
-4. **temperature** - Optimal temperature range improves quality
-5. **pressure** - Proper pressure control affects quality
-6. **operator_id** - Operator skill influences quality
-
-### Production Cost (Regression)
-Depends on:
-1. **material_cost** - Primary cost driver
-2. **labor_cost** - Labor efficiency affects cost
-3. **cycle_time** - Longer cycle times increase labor cost
-4. **downtime_minutes** - Downtime increases overhead cost
-5. **batch_size** - Economies of scale affect unit cost
-6. **efficiency_score** - Lower efficiency increases cost
+Students should plan a data-cleaning strategy **before** modeling.

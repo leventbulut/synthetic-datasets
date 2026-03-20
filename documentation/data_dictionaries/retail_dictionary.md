@@ -1,117 +1,100 @@
-# Retail Dataset Data Dictionary
+# Retail Dataset — Data Dictionary
 
 ## Overview
-This dataset contains 800,000 synthetic sales transaction records for retail analysis, including customer behavior, product performance, sales patterns, and customer lifetime value prediction.
+A large-scale synthetic dataset representing customer transactions at a multi-format retail chain. The dataset captures demographics, purchase behavior, loyalty program activity, and channel preferences.
 
-## Column Descriptions
+| Property | Value |
+|----------|-------|
+| Records | 800,000 |
+| Columns | 22 |
+| Date range | Jan 2021 – Sep 2024 |
+| Target variables | 2 (1 classification, 1 regression) |
 
-### Transaction Information
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| transaction_id | int64 | Unique transaction identifier | - | 0.00% |
-| customer_id | int64 | Unique customer identifier | - | 0.00% |
-| product_id | int64 | Unique product identifier | - | 0.00% |
-| transaction_date | datetime64[ns] | Date and time of transaction | datetime | 0.00% |
-| store_id | int64 | Store location identifier | - | 0.00% |
-| sales_channel | category | Sales channel (In-store, Online, Mobile) | - | 0.00% |
+---
+
+## Column Reference
 
 ### Customer Demographics
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| customer_age | int64 | Customer age in years | years | 0.00% |
-| customer_gender | category | Customer gender (Male, Female, Other) | - | 0.00% |
-| customer_location | category | Geographic location (Urban, Suburban, Rural) | - | 0.00% |
-| income_level | category | Income category (Low, Medium, High, Very High) | - | 0.00% |
-| customer_segment | category | Customer segment (Budget, Regular, Premium, Luxury) | - | 0.00% |
-| loyalty_program_tier | category | Loyalty program membership level | - | 0.91% |
 
-### Product Information
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| product_name | category | Product description | - | 0.00% |
-| product_category | category | Product classification | - | 0.00% |
-| product_brand | category | Product brand name | - | 0.00% |
-| product_price | float64 | Product unit price | USD | 0.00% |
-| product_cost | float64 | Product cost to retailer | USD | 0.00% |
-| product_rating | float64 | Customer product rating | score | 0.00% |
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `transaction_id` | String | Unique transaction identifier | — |
+| `age` | Integer | Customer age | Years |
+| `gender` | Categorical | Customer gender: Female, Male | — |
+| `annual_income` | Float | Customer annual income | USD |
 
-### Sales Metrics
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| quantity_sold | int64 | Number of units sold | units | 0.00% |
-| unit_price | float64 | Price per unit | USD | 0.00% |
-| total_amount | float64 | Total transaction amount | USD | 0.00% |
-| discount_amount | float64 | Discount amount applied | USD | 0.00% |
-| final_amount | float64 | Final amount after discounts | USD | 0.00% |
-| profit_margin | float64 | Profit margin percentage | percentage | 0.00% |
+### Store & Product
 
-### Customer Behavior
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| purchase_frequency | int64 | Customer purchase frequency | purchases/month | 0.00% |
-| avg_order_value | float64 | Average order value | USD | 0.00% |
-| last_purchase_days | int64 | Days since last purchase | days | 0.00% |
-| total_purchases | int64 | Total number of purchases | count | 0.74% |
-| return_history | int64 | Number of items returned | count | 0.00% |
-| customer_satisfaction | float64 | Customer satisfaction score | score | 0.00% |
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `store_type` | Categorical | Store format: Discount, Standard, Premium, Luxury | — |
+| `product_category` | Categorical | Product category: Electronics, Apparel, Grocery, Home & Garden, Beauty, Sports | — |
 
-### Store and Channel
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| store_location | category | Store geographic location | - | 0.15% |
-| store_size | category | Store size category | - | 0.00% |
-| store_rating | float64 | Store customer rating | score | 0.00% |
-| channel_performance | float64 | Channel performance score | score | 0.00% |
-| online_experience | category | Online shopping experience | - | 0.00% |
+### Purchase Behavior
 
-### Temporal Features
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| customer_since | datetime64[ns] | Date customer first registered | date | 0.00% |
-| season | category | Season of transaction | - | 0.00% |
-| day_of_week | category | Day of week | - | 0.00% |
-| hour_of_day | int64 | Hour of transaction | hour | 0.00% |
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `basket_size` | Integer | Number of items per transaction | Count |
+| `avg_item_price` | Float | Average price per item | USD |
+| `transaction_amount` | Float | Total transaction value | USD |
+| `visit_frequency_monthly` | Integer | Store visits per month | Count |
+| `days_since_last_visit` | Integer | Days since last store visit | Days |
+
+### Loyalty & Engagement
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `loyalty_member` | Categorical | Loyalty program member: Yes, No | — |
+| `loyalty_points` | Integer | Accumulated loyalty points | Points |
+| `online_purchase_pct` | Float | Fraction of purchases made online | Ratio (0–1) |
+| `return_rate` | Float | Product return rate | Ratio (0–1) |
+| `discount_sensitivity` | Float | Responsiveness to discounts | Ratio (0–1) |
+| `satisfaction_score` | Float | Customer satisfaction survey score | Scale 1–10 |
+| `referral_source` | Categorical | How customer was acquired: Walk-in, Advertisement, Online, Referral | — |
+
+### Payment
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `payment_method` | Categorical | Payment type: Cash, Debit, Credit, Mobile | — |
+
+### Temporal
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `transaction_date` | Datetime | Date of transaction | Date |
 
 ### Target Variables
-| Column Name | Data Type | Description | Unit | % Missing |
-|-------------|-----------|-------------|------|------------|
-| customer_segment | category | Customer segment classification (Budget, Regular, Premium, Luxury) | - | 0.00% |
-| predicted_clv | float64 | Predicted customer lifetime value | USD | 0.00% |
+
+| Column | Type | Description | Unit |
+|--------|------|-------------|------|
+| `customer_segment` | Integer | Customer segment: 0–3 | Class label |
+| `customer_lifetime_value` | Float | Predicted customer lifetime value | USD |
+
+---
+
+## Suggested Starting Questions
+
+**Classification — Customer Segment**
+
+1. *Build a model to classify customers into segments. What distinguishes a VIP customer from a Budget one, and how would a store manager use this classification to personalize service?*
+
+2. *The merchandising team wants to understand whether segmentation patterns differ across store types and product categories. Investigate this and recommend category-specific strategies.*
+
+**Regression — Customer Lifetime Value**
+
+3. *Develop a regression model to predict customer lifetime value. What behaviors drive long-term value, and how should the loyalty program be redesigned to increase CLV?*
+
+4. *The e-commerce team wants to grow online sales. Analyze the relationship between online purchase percentage and CLV, and recommend strategies to shift high-value customers to digital channels.*
+
+---
 
 ## Data Quality Notes
 
-### Missing Values (MNAR - 3%)
-- **Missingness Pattern**: Higher missingness in `customer_satisfaction` for low-value transactions
-- **Business Logic**: Smaller transactions may not trigger satisfaction surveys
+This dataset contains intentional data quality challenges commonly found in real-world POS and CRM systems:
 
-### Outliers (0.2%)
-- **Price Outliers**: Extremely high prices (>$10k) or negative prices
-- **Quantity Outliers**: Very high quantities (>1000 units) or negative quantities
-- **Age Outliers**: Unrealistic customer ages (<13 or >100)
-- **Rating Outliers**: Perfect ratings (10.0) or extremely low ratings (<1.0)
+- **Missing values (~3%)** — Some fields have missing entries. The missingness is *not* random; it follows patterns that a careful analyst can identify.
+- **Outliers (~0.2%)** — A small number of records contain extreme values that require investigation.
+- **Entry errors (~5%)** — Some records contain implausible values that reflect real-world data-entry mistakes.
 
-### Entry Errors (≤30%)
-- **Price Errors**: Some products show inconsistent pricing
-- **Date Errors**: Future transaction dates or impossible time sequences
-- **Quantity Errors**: Negative quantities or unrealistic values
-- **Customer Errors**: Inconsistent customer demographics
-
-## Target Variable Dependencies
-
-### Customer Segment (Classification)
-Depends on:
-1. **avg_order_value** - Primary predictor (positive correlation)
-2. **purchase_frequency** - Higher frequency indicates premium segment
-3. **income_level** - Higher income associated with premium segments
-4. **loyalty_program_tier** - Higher tiers indicate premium customers
-5. **total_purchases** - More purchases suggest higher-value segments
-6. **customer_satisfaction** - Higher satisfaction associated with premium segments
-
-### Predicted CLV (Regression)
-Depends on:
-1. **avg_order_value** - Higher order values increase CLV
-2. **purchase_frequency** - More frequent purchases increase CLV
-3. **total_purchases** - Purchase history indicates future value
-4. **income_level** - Higher income associated with higher CLV
-5. **loyalty_program_tier** - Higher tiers indicate higher CLV
-6. **customer_satisfaction** - Satisfied customers have higher retention
+Students should plan a data-cleaning strategy **before** modeling.
