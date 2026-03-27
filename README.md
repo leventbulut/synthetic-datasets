@@ -1,6 +1,6 @@
 # 📊 Synthetic Datasets for Data Science Education
 
-A curated collection of **10 realistic synthetic datasets** spanning Healthcare, Finance, Marketing, Supply Chain, Manufacturing, Retail, Telecommunications, Education, Transportation, and Energy.
+A curated collection of **11 realistic synthetic datasets** spanning Healthcare, Finance, Marketing, Supply Chain, Manufacturing, Retail, Telecommunications, Education, Transportation, Energy, and Depression/Mental Health.
 
 Each dataset is purpose-built for classroom use — designed with realistic feature relationships, data quality challenges, and both classification and regression targets.
 
@@ -35,6 +35,7 @@ df.head()
 | 🎓 Education | 300K | 22 | Academic performance | College readiness |
 | 🚗 Transportation | 450K | 22 | Delivery success | Delivery cost |
 | ⚡ Energy | 350K | 22 | Efficiency level | Energy consumption |
+| 🧠 Depression | 400K | 31 | Depression severity | Recovery score |
 
 ---
 

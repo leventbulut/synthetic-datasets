@@ -12,5 +12,6 @@
 | 8 | 🎓 Education | `datasets/education/` | 300K | Academic performance · College readiness |
 | 9 | 🚗 Transportation | `datasets/transportation/` | 450K | Delivery success · Delivery cost |
 | 10 | ⚡ Energy | `datasets/energy/` | 350K | Efficiency level · Energy consumption |
+| 11 | 🧠 Depression | `datasets/depression/` | 400K | Depression severity · Recovery score |
 
 Each dataset includes a **data dictionary** and **analytical questions** in the `documentation/` folder.
