@@ -6,7 +6,7 @@ A large-scale synthetic dataset representing patient records from a mental-healt
 | Property | Value |
 |----------|-------|
 | Records | 400,000 |
-| Columns | 31 |
+| Columns | 32 |
 | Date range | Jan 2022 – Sep 2024 |
 | Target variables | 2 (1 classification, 1 regression) |
 
@@ -24,6 +24,7 @@ A large-scale synthetic dataset representing patient records from a mental-healt
 | `marital_status` | Categorical | Marital status: Single, Married, Divorced, Widowed | — |
 | `education_level` | Categorical | Highest education: Less than High School, High School, Some College, Bachelor, Graduate | — |
 | `employment_status` | Categorical | Employment: Unemployed, Part-time, Full-time, Student, Retired | — |
+| `occupation` | Categorical | Occupation Sector / industry role | — |
 | `annual_income` | Float | Annual household income | USD |
 
 ### Clinical History
