@@ -1,4 +1,7 @@
-# Analytical Case Studies
+# From Data to Decisions
+## An Applied Case Study Series in Data Science
+
+**Author:** Levent Bulut, University of North Texas
 
 Graduate-level data science case studies designed around the synthetic datasets in this repository. Each case study places you in the role of an analytics professional facing a real-world business challenge — with messy data, tight deadlines, and decisions that go beyond the model.
 
@@ -7,16 +10,19 @@ Graduate-level data science case studies designed around the synthetic datasets 
 1. **Read the case narrative first.** Understand the business context, the protagonist's challenge, and the stakes before touching the data.
 2. **Review the exhibits.** Each case includes supplementary materials (stakeholder memos, KPI dashboards) that provide additional context.
 3. **Load the dataset.** The CSV file path is listed in each case study. Use the corresponding data dictionary for column definitions.
-4. **Work through the discussion questions.** These are open-ended — there is no single correct answer. Be prepared to defend your choices.
-5. **Prepare the executive deliverable.** Each case concludes with a board-level presentation or recommendation. Practice communicating technical findings to non-technical stakeholders.
+4. **Work through the four phases.** Each case is structured as Discovery → Prediction → Ethics → Board Room. Guiding questions and deliverables are embedded within each phase.
+5. **Prepare the executive deliverable.** Each case concludes with a board-level presentation. Practice communicating technical findings to non-technical stakeholders.
 
 ## Available Case Studies
 
-| Case Study | Industry | Dataset | Description |
-|-----------|----------|---------|-------------|
-| [The Quiet Exodus](marketing/marketing.md) | Marketing | 600K customers, 29 cols | Customer churn and CLV at a mid-size e-commerce company |
+| Case | Industry | Dataset | Description |
+|------|----------|---------|-------------|
+| [The Quiet Exodus](marketing/marketing.md) | E-Commerce | 600K customers, 29 cols | Customer churn and CLV at a mid-size e-commerce company |
 | [Thirty Days](healthcare/healthcare.md) | Healthcare | 500K patients, 21 cols | Hospital readmission prediction under CMS penalty pressure |
-| [The Missing Signal](depression/depression.md) | Depression | 400K patients, 32 cols | Mental health triage and treatment dropout at a community network |
+| [The Missing Signal](depression/depression.md) | Mental Health | 400K patients, 32 cols | Depression triage and treatment dropout at a community network |
+| [The Model That Cried Safe](finance/finance.md) | Banking | 750K customers, 23 cols | Credit risk modeling and fraud scoring under regulatory stress |
+| [The Weakest Link](supply_chain/supply_chain.md) | Supply Chain | 1M orders, 22 cols | Supplier risk classification and cost prediction for global procurement |
+| [The Tolerance Stack](manufacturing/manufacturing.md) | Manufacturing | 400K batches, 21 cols | Quality prediction and production cost modeling on the shop floor |
 
 ## Structure
 
@@ -24,7 +30,7 @@ Each case study folder contains:
 
 ```
 <industry>/
-├── <industry>.md           ← Main case narrative + discussion questions
+├── <industry>.md           ← Main case narrative + phase-based assignment
 └── exhibits/
     ├── exhibit_A.md        ← Stakeholder memo or regulatory notice
     └── exhibit_B.md        ← Organizational dashboard or KPI snapshot
