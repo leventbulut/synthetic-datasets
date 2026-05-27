@@ -23,6 +23,11 @@ Graduate-level data science case studies designed around the synthetic datasets 
 | [The Model That Cried Safe](finance/finance.md) | Banking | 750K customers, 23 cols | Credit risk modeling and fraud scoring under regulatory stress |
 | [The Weakest Link](supply_chain/supply_chain.md) | Supply Chain | 1M orders, 22 cols | Supplier risk classification and cost prediction for global procurement |
 | [The Tolerance Stack](manufacturing/manufacturing.md) | Manufacturing | 400K batches, 21 cols | Quality prediction and production cost modeling on the shop floor |
+| [The Wrong List](retail/retail.md) | Retail | 800K transactions, 22 cols | Customer segmentation and lifetime value at a multi-format retail chain |
+| [The Loyalty Tax](telecommunications/telecommunications.md) | Telecom | 550K subscribers, 22 cols | Churn prediction and satisfaction modeling at a wireless carrier |
+| [The Label Maker](education/education.md) | Education | 300K students, 22 cols | Academic early-warning systems and college readiness prediction |
+| [The Route That Broke the Contract](transportation/transportation.md) | Transportation | 450K deliveries, 22 cols | Delivery outcome prediction and cost estimation for fleet logistics |
+| [The Retrofit Equation](energy/energy.md) | Energy | 350K buildings, 21 cols | Building efficiency classification and consumption forecasting |
 
 ## Structure
 
