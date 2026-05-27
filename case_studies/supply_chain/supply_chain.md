@@ -206,9 +206,9 @@ It is ninety days after the $14 million failure. Marco Reyes stands before Vangu
 
 **From Data to Decisions: An Applied Case Study Series in Data Science**
 
-© 2025 Levent Bulut. All rights reserved.
+© 2026 Levent Bulut. All rights reserved.
 
 This case was prepared as a basis for class discussion and is not intended to illustrate either effective or ineffective management of a business situation. All characters, companies, and scenarios are fictional. The accompanying dataset is synthetic and licensed for educational and analytical use.
 
 *Suggested citation:*
-Bulut, L. (2025). "The Weakest Link." *From Data to Decisions*, Case 5. University of North Texas.
+Bulut, L. (2026). "The Weakest Link." *From Data to Decisions*, Case 5. University of North Texas.
