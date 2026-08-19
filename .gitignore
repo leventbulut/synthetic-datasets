@@ -46,3 +46,16 @@ venv/
 
 # Development
 .qodo/
+
+
+# Copyrighted materials (Strictly Private)
+Harvard Case Studies/
+"Harvard Case Studies/"
+Harvard*
+
+# Student submissions & FERPA privacy (Strictly Private)
+case_studies/assignments/Submissions*/
+case_studies/assignments/submissionsFinalProject/
+Submissions*/
+submissionsFinalProject/
+*.docx
